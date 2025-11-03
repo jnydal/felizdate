@@ -1,0 +1,23 @@
+.InputField span.testresult {
+    font-size:10px !important;
+    margin-left:3px;
+    padding:2px 20px
+}
+
+.InputField span.weak {
+	border:1px solid #f00;
+	background-color:#fee;
+	color:#f00 !important
+}
+
+.InputField span.ok {
+	border:1px solid #0f0;
+	background-color:#afa;
+	color:#0d0 !important
+}
+
+.InputField span.strong {
+	border:1px solid #0f0;
+	background-color:#7f7;
+	color:#0d0 !important
+}

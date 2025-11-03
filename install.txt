@@ -1,0 +1,6 @@
+- install required dependencies described in dependencies.txt
+- set up db as described in sql/important.txt
+
+config:
+
+make sure postgres/bin is available in sys path

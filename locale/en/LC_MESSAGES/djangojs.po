@@ -1,0 +1,430 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-23 20:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: static/3rdjs/3rdjs.min.js:156
+msgid "Weak"
+msgstr ""
+
+#: static/3rdjs/3rdjs.min.js:156 static/js/js.min.js:1
+msgid "Ok"
+msgstr ""
+
+#: static/3rdjs/3rdjs.min.js:156
+msgid "Strong"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "seconds ago"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "minutes ago"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "hours ago"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Search"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Settings"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Logout"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Terms of use"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Privacy policy"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Facebook login failed."
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Messages"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "View all messages"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "GeoOnline"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Online"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Away"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Invisible"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Close"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Crop"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "popup.info.header.title"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "common.close"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "common.done"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "common.cancel"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "common.ok"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Error"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Cheer!"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Block"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "send"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "female"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "male"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Gender"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Age"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Occupation"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Educational degree"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Political"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Religion"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Description"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Interests"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Previous"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Next"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Available on web, pads and mobiles"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Match based on custom interests"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Location based match feature"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Realtime chat"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Report/blocking feature"
+msgstr ""
+
+#: static/js/js.min.js:1
+#, c-format
+msgid "<span>100% anonymity</span>"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "<span>Completely FREE!</span>"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Sign-up"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Sign-up via facebook (*)"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid ""
+"* By signing-up via Facebook&copy; account you don't need to create "
+"a<br>login account. Interests is copied to your Felizdate profile "
+"which<br>you can change anytime. Your privacy is our main concern."
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Image"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "1. Account"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "2. Profile"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "3. Enjoy"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Account information"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Step 1: "
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid ""
+"Create new login account, or use your facebook account to authorize at this "
+"site."
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Set up your profile basics"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Step 2: "
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Advanced profile setup can be done later."
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Find a friend"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Step 3: "
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Meet people with your interests."
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "GeoMatch"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Best matches"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Custom"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "search"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Account"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Profile"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Your position"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Submit"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "select"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "add"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "E-mail"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Password"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Login"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Register"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "forgotten password?"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "GeoMatcher is only available in GeoOnline mode."
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "GeoMatcher is only available for handheld devices."
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Min age"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Max age"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Country"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "City"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Political alignment"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Logged in"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "back"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid ""
+"Your password will be sent to this address. Your address will not be made "
+"public."
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Confirm password"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Agree to service conditions"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "I agree to the terms and conditions of use and the privacy policy"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Profile name"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Year of birth"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Profession"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Appearance"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Body"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Hair"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Skin"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Eyes"
+msgstr ""
+
+#: static/js/js.min.js:1
+msgid "Partner preferences"
+msgstr ""

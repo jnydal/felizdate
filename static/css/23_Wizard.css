@@ -1,0 +1,93 @@
+.Wizard {	
+    -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    border:1px solid #CCC;
+    font-size:12px;
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    background-color: #fff;
+    /*-moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none*/
+}  
+
+.Wizard .footer {
+	padding:0;
+	height:65px;
+	clear:both
+}
+
+.Wizard .footer > li {
+	list-style-type:none;
+	margin-bottom:30px
+}
+
+.Wizard .footer .previousButton {
+	float:left;
+	margin-left:20px;
+	margin-top:20px
+}
+
+.Wizard .footer .nextButton {
+	float:right;
+	margin-right:20px;
+	margin-top:20px
+}
+
+.Wizard .status {
+    background: #F4F4F4;
+    background: -moz-linear-gradient(top, #FCFCFC, #F4F4F4);
+	background: -webkit-gradient(linear, left top, left bottom, from(#FCFCFC), to(#F4F4F4));
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#FCFCFC,endColorstr=#F4F4F4);
+	margin:0px !important;
+    height: 40px;
+	_background:#123;
+    border-bottom: 1px solid #CCC
+}
+
+.Wizard .pageLock {
+	position: absolute;
+	opacity: 0.5;
+	background-color: #fff;
+	background-image: url(/static/spinner3-bluey.gif);
+	background-repeat: no-repeat;
+	background-position: 860px 35px;
+	display: none;
+    	top: 0;
+    	width: inherit;
+	height: inherit
+}
+
+.Wizard .status {
+	padding:0
+}
+
+.Wizard .status li:first-child {
+	border-left: none !important
+}
+
+.Wizard .status li {
+	float:left;
+	color:#111;
+    line-height: 40px;
+	list-style-type:none;
+	list-style-image:none;
+	padding:0 30px;
+    text-shadow: 0 1px 0 #FFF
+}
+
+.Wizard .status li.active {
+    background-color:#FFF;
+    border: 1px solid #CCC;
+    border-bottom-color: #FFF;
+    border-top-width: 0;
+    margin-bottom: -1px;
+    font-weight:normal
+}
+
+.Wizard .Form {
+	padding:0
+}

@@ -1,0 +1,15 @@
+supervisorctl stop felizdate_chat
+supervisorctl stop felizdate_instance1
+cd /srv/felizdate
+rm -r *
+cd /home/felizdate 
+cp felizdate.zip /srv/felizdate
+cd /srv/felizdate
+unzip felizdate.zip
+rm felizdate.zip
+fromdos setup_prod
+chmod a+x setup_prod
+./setup_prod
+supervisorctl start felizdate_chat
+supervisorctl start felizdate_instance1
+

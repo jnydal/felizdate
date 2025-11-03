@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# delete old compiled files
+find . -name "*.pyc" -exec rm -rf {} \;
+
+# create media folder for temp files
+mkdir media
+chown felizdate media
+chmod 775 media
+
+# setup prod settings
+cd felizdate
+rm settings.py
+mv settings_prod.py settings.py
+cd ..
+
+# ensure that all text files is in unix format
+fromdos convert_text_files_to_unix_format
+chmod a+x convert_text_files_to_unix_format
+./convert_text_files_to_unix_format
+
+# yui compress files
+chmod a+x yuicompress.sh
+./yuicompress.sh
+
+# delete s3 static folder, and upload new
+python upload_to_s3.py static felizdate s
+
+# compile messages
+django-admin.py compilemessages
+

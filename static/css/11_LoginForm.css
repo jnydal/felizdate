@@ -1,0 +1,62 @@
+.LoginForm {
+	width:auto;
+	padding:0;
+	background-color:transparent
+}
+
+.LoginForm .FieldGroup label > span:first-child {
+    display: inline;
+    margin-right:7px
+}
+
+.LoginForm .testresult {
+	display:none
+}
+
+.LoginForm .Field {
+	width:auto;
+	margin-right:5px
+}
+
+.LoginForm .FieldGroup {
+	margin-bottom:0
+}
+
+.LoginForm .body {
+	vertical-align:top;
+	display:inline-block
+}
+
+.LoginForm .footer {
+    vertical-align:top;
+    width:auto;
+    display: inline-block;
+}
+
+.LoginForm .footer .SubmitButton {
+    margin-right:5px;
+    height: 26px;
+}
+
+.LoginForm .fbLogin {
+	width: 26px;
+	padding-left:2px !important;
+	overflow:hidden
+}
+
+.LoginForm .fbLogin span {
+	background-image:url(http://dg1h6uvotkrdh.cloudfront.net/s/images/sprites.png);
+	background-position: -292px -240px;
+	width:100%;
+	height:100%;
+	display:block;
+}
+
+.LoginForm .registerButton {
+	display:none
+}
+
+.LoginForm > .footer > .generalError {
+    margin-left: 130px;
+    position: absolute;
+}

@@ -1,0 +1,347 @@
+@media screen and (max-width: 640px) {
+	
+	/* general structure */
+	
+	#view.resp {
+		min-width:240px;
+		padding-bottom:20px;
+		min-height: none !important;
+	}
+	
+	#view.resp > .headerWrapper {
+		position:fixed;
+		top:0;
+		left:0
+	}
+	
+	#view.resp > .main {
+		padding-top:35px
+	}
+	
+	#view.resp > .main > .footer {
+		display:none
+	}
+	
+	#view.resp .Page {
+		clear:both;
+		margin: 0;
+	}
+
+	#view.resp .Form {
+		padding:10px
+	}
+	
+	#view.resp #userMenu .MenuItem, #view.resp #userMenu .SubMenu {
+		margin-right:1px;
+		border-left:0px;
+		border-right:0px;
+	}
+	
+	#view.resp .StatusMenu > .DropDownMenu > .SubMenu > a > .text {
+		display:block
+	}
+	
+	/* page navigator */
+	
+	#view.resp .PageNavigator {
+		margin:0
+	}
+	
+	#view.resp .PageNavigator .bg{
+		display:none
+	}
+		
+	/* login form */
+	
+	#view.resp .LoginForm {
+    	float:left;
+    	margin-top:65px;
+    	width:inherit;
+    	color:#fff
+	}
+	
+	#view.resp .LoginForm .body {
+    	width:100%
+	}
+	
+	#view.resp .LoginForm .footer {
+    	width:100%
+	}
+	
+	#view.resp .LoginForm .FieldGroup {
+		width:100%
+	}
+	
+	#view.resp .LoginForm label {
+    	width:100%
+	}
+	
+	#view.resp .LoginForm .SubmitButton {
+		float:left !important
+	}
+	
+	#view.resp .LoginForm .registerButton {
+		display:block
+	}
+	
+	#view.resp .LoginForm .fbLogin {
+		padding-left: 10px !important;
+	}
+	
+	#view.resp .LoginForm .fbLogin span {
+		background-image:url(http://dg1h6uvotkrdh.cloudfront.net/s/images/sprites.png);
+		background-position:-292px -240px;
+		background-repeat:no-repeat;
+		display: inline !important;
+		padding-left: 25px;
+	}
+	
+	/* register wizard */
+	
+	#view.resp .Wizard {
+		clear:both
+	}
+	
+	#view.resp .Wizard .Form {
+		padding:0
+	}
+	
+	#view.resp .WizardPage .header {
+		display:none
+	}
+
+	#view.resp .Wizard .status li {
+		padding:0 20px
+	}
+
+	#view.resp .Wizard .footer {
+		padding:0 20px
+	}
+	
+	#view.resp .Wizard .footer .nextButton {
+		float:none;
+		margin:0
+	}
+	
+	/* form */
+	
+	#view.resp .Form .footer .SubmitButton {
+		margin-right:0
+	}
+	
+	#view.resp .FieldGroup label {
+		width:100% !important
+	}
+	
+	#view.resp .TextAreaField textarea {
+		width:100%
+	}
+	
+	#view.resp input {
+		height:40px;
+		width:100% !important
+	}
+	
+	#view.resp input[type=checkbox] {
+		height:40px;
+		width:auto !important
+	}
+	
+	#view.resp select {
+		height:40px;
+		width:100% !important
+	}
+	
+	#view.resp .SubmitButton {
+		height:40px;
+		width:100%
+	}
+	
+	#view.resp .MessagesPage .searchButton {
+		width:130px;
+		float:none;
+		display:inline-block
+	}
+	
+	#view.resp .MessagesPage .header {
+		height:auto;
+		width:100%;
+		text-align:right
+	}
+	
+	/* search messages form */
+	
+	#view.resp #searchMessagesForm {
+		width:auto;
+		height:auto;
+		display:inline-block;
+		padding:0;
+		text-align:right;
+		float:none
+	}
+	
+	#view.resp #searchMessagesForm .body {
+		float:none;
+		width:auto;
+		height:auto;
+		display:inline-block;
+		padding:0;
+	}
+	
+	#view.resp #searchMessagesForm .footer {
+		float:none;
+		width:auto;
+		height:auto;
+		display:inline-block;
+		padding:0;
+	}
+	
+	/* user menu */
+	
+	#view.resp #userMenu .SubMenu.full, #view.resp #userMenu > .MenuItem.full {
+		width:auto
+	}
+
+	#view.resp #userMenu > .SubMenu > a > .text, #view.resp #userMenu > .MenuItem > a > .text {
+		display:none
+	}
+	
+	/* dialog windows */
+	
+	#view.resp .DialogWindow {
+		left:0 !important;
+		top:-63px !important;
+		margin:100px auto;
+		width:100%;
+		box-shadow:none
+	}
+	
+	/* profiledialog */
+	
+	#view.resp .ProfileDialogWindow {
+	    width: 100% !important;
+	    padding:0;
+	    border:0
+    }
+    
+	#view.resp .ProfileDialogWindow .DropDownMenu {
+	    clear: none;
+	    width: auto;
+    }
+    
+    #view.resp .ProfileDialogWindow .DropDownMenu > .SubMenu > a > .text, .DropDownMenu > .MenuItem > a > .text {
+    	display:none;
+    }
+    
+    #view.resp .ProfileDialogWindow .leftColumn {
+	    clear: none;
+	    margin-right: 10px;
+	    position:relative
+	}
+	
+	#view.resp .ProfileDialogWindow .contentWrapper {
+	    width:100%
+	}
+	
+	#view.resp .ProfileDialogWindow .contentWrapper .content {
+	    clear:none;
+	    width:auto;
+	    float:none;
+	    min-width:80px;
+	    max-width:auto;
+	    position:relative
+	}
+	
+	#view.resp .ProfileDialogWindow .Interest .text {
+		font-size:12px
+	}
+
+	#view.resp .ProfileDialogWindow .messagesPanel {
+		clear: none;
+	    float: none;
+	    margin: 40px 0 0;
+	    padding: 0;
+	    position: relative;
+	    width: auto;
+	}
+	
+	#view.resp .ProfileDialogWindow .messagesPanel .content {
+		display: inline-block;
+	    height: 270px !important;
+	    margin: 0 auto;
+	    width: 100%;
+	    min-width: 200px;
+	}
+	
+	#view.resp .ProfileDialogWindow .messagesPanel .SubmitButton {
+	    width:100%;
+	    margin:10px 0;
+	    float:none
+	}
+	
+	#view.resp .ProfileDialogWindow .messagesPanel textarea {
+	    width:100%
+	}
+	
+	#view.resp .ProfileDialogWindow .generalInfo .interests {
+		width:auto
+	}
+	
+	/* other */
+	
+	#view.resp .TabPanel {
+		border:0
+	}
+	
+	#view.resp .TabPanel > ul {
+		width:100%
+	}
+	
+	#view.resp .TabPanel > ul > li > a {
+		padding:5px 10px
+	}
+	
+	#view.resp .LandingPage {
+		display:none
+	}
+	
+	#view.resp .SettingsPage .TabPanel > ul li{
+		width:33%;
+		border-left:0;
+		border-right:0
+	}
+	
+	#view.resp .SearchPage .TabPanel > ul li {
+		width:33%;
+		border-left:0;
+		border-right:0
+	}
+	
+	#view.resp .InterestSection .SubmitButton {
+    	height:40px;
+    	width:auto
+	}
+
+	#view.resp .ResultBrowser .results {
+		/*width:100%*/
+	}
+	
+	.mobileHidden {
+		display:none
+	}
+	
+	#rightAd {
+		display:none
+	}
+	
+	#bottomAd {
+		bottom: 0;
+	    display: block;
+	    left: 0;
+	    position: fixed;
+	    width: 100%;
+	}
+}
+
+/* antidote for non-responsive override setting */
+

@@ -1,0 +1,76 @@
+.ProfileForm {
+	text-align:left
+}
+
+.ProfileForm textarea {
+	width:600px
+}
+
+.ProfileForm .footer .SubmitButton {
+
+}
+
+/* interest section */
+
+.InterestSection > .FieldGroup {
+	width:auto;
+	display: inline-block;
+}
+
+.InterestSection label {
+	margin-right:5px;
+	width:auto !important
+}
+
+.InterestSection .SubmitButton {
+	height:25px
+}
+
+.InterestSection .LookupField .suggestions {
+    border-bottom:1px solid #333333;
+	border-left:1px solid #333333;
+	border-right:1px solid #333333;
+	position:absolute;
+	width:170px;
+	padding-bottom:0;
+	background-color:#fff
+}
+
+.InterestSection .Suggestion {
+    margin-left:5px;
+	list-style-type:none;
+	margin:5px
+}
+
+.InterestSection .Suggestion .text {
+    font-style:bold
+}
+
+.InterestSection .Suggestion .category {
+    float:right
+}
+
+.Interest .remove {
+    width:20px;
+    height:20px;
+    background-color:#fff;
+    float:left;
+	text-align:center
+}
+
+.Interest .remove:hover {
+    cursor:pointer
+}
+
+.Interest {
+    list-style-type:none;
+    background-color:#fff;
+	border:1px solid #333;
+    float:left;
+    margin-right:5px    
+}
+
+.Interest span.text {
+    float:left;
+    margin:0 10px
+}

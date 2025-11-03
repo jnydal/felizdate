@@ -1,0 +1,20 @@
+.PageNavigator {
+	margin:0 auto;
+	max-width:910px;
+   	min-width:320px;
+   	width:100%;
+	padding-top:15px;
+	position:relative
+}
+
+.PageNavigator > .bg {
+	background-color:#000;
+	opacity:0.4;
+	width:inherit;
+	height:100%;
+	position:absolute
+}
+
+.Page {
+	margin:15px
+}

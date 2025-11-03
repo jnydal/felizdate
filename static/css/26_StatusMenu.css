@@ -1,0 +1,52 @@
+.StatusMenu > .DropDownMenu {
+float:left !important
+}
+
+.StatusMenu .DropDownMenu .MenuItem, .StatusMenu .DropDownMenu .SubMenu {
+clear:both;
+height:20px
+}
+
+.StatusMenu .DropDownMenu:hover {
+cursor:pointer
+}
+
+.StatusMenu .DropDownMenu .MenuItem a, .StatusMenu .DropDownMenu .SubMenu a {
+    line-height:16px;
+    width:auto
+}
+
+.StatusMenu > .DropDownMenu > .SubMenu > a > .text {
+	margin-left:0
+}
+
+.StatusMenu .DropDownMenu .SubMenu > ul {
+    width:95px;
+    margin-left:-2px;
+    z-index:9999
+}
+
+.StatusMenu .DropDownMenu .MenuItem .icon {
+	background-image:url(http://dg1h6uvotkrdh.cloudfront.net/s/images/sprites.png);
+    float: left;
+    height: 20px;
+    width: 20px;
+}
+
+.StatusMenu .DropDownMenu .MenuItem.statusGeoonline > a > .icon {
+	background-position: -2px -135px;
+}
+
+.StatusMenu .DropDownMenu .MenuItem.statusOnline > a > .icon {
+	background-position: -2px -114px;
+}
+
+.StatusMenu .DropDownMenu .MenuItem.statusAway > a > .icon {
+	background-position: -2px -94px;
+}
+
+.StatusMenu .DropDownMenu .MenuItem.statusInvisible > a > .icon {
+	background-position: -2px -74px;
+}
+
+

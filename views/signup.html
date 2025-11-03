@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block main_content %}
+	<!-- just a html clone of landingpage part for better SEO -->
+	<div id="item2" class="ComponentContainer PageNavigator">
+		<div class="bg"></div>
+		<div id="item194" class="Page LandingPage mobileHidden ">
+			<div class="dateImage"></div>
+			<div class="points">
+				<span id="item195" class="IconLabel"><span class="icon null"></span><span class="text">{% trans "Match based on custom interests" %}</span></span>
+				<span id="item196" class="IconLabel"><span class="icon null"></span><span class="text">{% trans "Location based match feature" %}</span></span>
+				<span id="item197" class="IconLabel"><span class="icon null"></span><span class="text">{% trans "Realtime chat" %}</span></span>
+				<span id="item198" class="IconLabel"><span class="icon null"></span><span class="text">{% trans "Media album" %}</span></span>
+				<span id="item199" class="IconLabel"><span class="icon null"></span><span class="text">{% trans "Report/blocking feature" %}</span></span>
+				<span id="item198" class="IconLabel"><span class="icon null"></span><span class="text">{% trans "Available on web, pads and mobiles" %}</span></span>
+				<span id="item198" class="IconLabel"><span class="icon null"></span><span class="text">{% trans "100% anonymity" %}</span></span></div>
+				
+				<div class="stickers">
+					<div class="freeSticker sticker stroke"><span>{% trans "<span>FREE premium membership until July 2013</span>" %}</span></div>
+				</div>
+				
+				<button style="width:49.5%" id="item200" class="SubmitButton" onclick="window.location='/?reg=1'"><span>{% trans "Sign-up" %}</span><img width="15px" class="spinner invisible" src="/static/images/spinner3-bluey_small.gif"></button>
+				<button style="width:49.5%" id="item201" class="SubmitButton fb" onclick="window.location='/?regfb=1'"><span>{% trans "Sign-up via facebook (*)" %}</span><img width="15px" class="spinner invisible" src="/static/images/spinner3-bluey_small.gif"></button>
+				
+				<div class="fbNote">{% trans "* By signing-up via Facebook&copy; account you don't need to create a<br>login account. Interests is copied to your Felizdate profile which<br>you can change anytime. Your privacy is our main concern." %}</div>
+			</div>
+		</div>
+	<div class="footer"><span id="footerText">&nbsp;&nbsp;&nbsp;Felizdate &copy; 2013</span><span id="footerLinks"><a href="http://s3-eu-west-1.amazonaws.com/felizdate/s/Terms_and_conditions_of_use_rev_080712.docx">{% trans "Terms of use" %}</a> | <a href="http://s3-eu-west-1.amazonaws.com/felizdate/s/Privacy_policy_rev_080712.docx">{% trans "Privacy policy" %}</a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	</div>
+	
+{% endblock %}
+

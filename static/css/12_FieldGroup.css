@@ -1,0 +1,77 @@
+.FieldGroup {
+   width:inherit;
+}
+
+.FieldGroup {
+    margin-bottom:10px;
+    clear:both
+}
+
+.FieldGroup label {
+	font-size:12px;	
+	display:inline-block;
+	width:100%
+}
+
+.FieldGroup label strong {
+	position:relative
+}
+
+.FieldGroup label em {
+	font-size:11px;
+	font-style:normal;
+	margin-left:5px
+}
+
+.FieldGroup div.selector {
+	width:100%
+}
+
+.FieldGroup label > span:first-child {
+	display:block
+}
+
+.FieldGroup label .requiredMarker {
+	color:#f00;
+	position:relative;
+	font-size:16px;
+	display:inline-block;
+	vertical-align:middle;
+	height:10px;
+	margin-left:2px
+}
+
+.FieldGroup.double label { 
+	float:left;
+    margin-right: 1%;
+	width:49%
+}
+
+.FieldGroup.triple label { 
+    float:left;
+    margin-right: 1%;
+    width:30%
+}
+
+.FieldGroup.quad label { 
+    float:left;
+    width:25%
+}
+
+.FieldGroup.quad input[type=text], .FieldGroup.quad input[type=passsword], .FieldGroup.quad select { 
+    width:90%
+}
+
+.FieldGroup.penta label { 
+    float:left;
+    width:20%
+}
+
+.FieldGroup.hexa label { 
+    float:left;
+    width:16%
+}
+
+.FieldGroup > h4 {
+	padding: 15px 0 5px;
+}

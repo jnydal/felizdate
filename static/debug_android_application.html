@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="initial-scale=1.0; maximum-scale=1; minimum-scale=1; user-scalable=no">
+<head>
+		
+	<!-- styles -->
+	<link rel="stylesheet" href="/static/css/01_reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/02_typography.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/static/css/03_googleDroid.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/04_common.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/05_View.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/06_ComponentContainer.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/07_TabPanel.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/08_Form.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/09_LandingPage.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/10_MessagesPage.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/11_LoginForm.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/12_FieldGroup.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/13_AccountForm.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/14_ProfileForm.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/15_GeoMap.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/16_GeoMatchesFinder.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/17_BestMatchesForm.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/18_CustomSearchForm.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/19_ResultBrowser.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/20_InputField.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/21_SubmitButton.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/22_PageNavigator.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/23_Wizard.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/24_WizardPage.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/25_DropDownMenu.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/26_StatusMenu.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/27_DialogWindow.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/28_ProfileDialogWindow.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/29_MediaManager.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/css/30_responsive.css" type="text/css" media="screen" />
+	
+	<!-- dependent styles -->
+	<link rel="stylesheet" href="/static/3rdcss/01_Scrollable.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/3rdcss/02_jquery.Jcrop.min.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/3rdcss/03_jquery-ui-1.8.21.custom.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/3rdcss/04_slidy.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/3rdcss/05_video-js.min.css" type="text/css" media="screen" />
+	
+	<!-- utilities -->
+	<script type="text/javascript" src="/jsi18n/"></script>
+	<script type="text/javascript" src="/static/js/common/01_Utilities.js"></script>
+	<script type="text/javascript" src="/static/js/common/02_CountryCode.js"></script>
+	<script type="text/javascript" src="/static/js/common/03_Positioning.js"></script>
+
+	<!-- dependencies -->
+	<script type="text/javascript" src="/static/3rdjs/01_jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/static/3rdjs/02_jquery-ui-1.8.21.custom.min.js"></script>
+	<script type="text/javascript" src="/static/3rdjs/03_jQueryPlugins.js"></script>
+	<script type="text/javascript" src="/static/3rdjs/04_jquery.Jcrop.min.js"></script>
+	<script type="text/javascript" src="/static/3rdjs/05_slidy.js"></script>
+	<script type="text/javascript" src="/static/3rdjs/06_jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="/static/3rdjs/07_jquery_mootools_bridge.js"></script>
+	<script type="text/javascript" src="/static/3rdjs/08_mootools-core-1.4.1-full-nocompat.js"></script>
+	<script type="text/javascript" src="/static/3rdjs/09_mootools-more-1.4.0.1.js"></script>
+	<script type="text/javascript" src="/static/3rdjs/10_Scrollable.js"></script>
+	<script type="text/javascript" src="/static/3rdjs/11_video.min.js"></script>
+	
+	<!-- cordova facebook plugin -->
+  	<script src="/static/opt/cdv-plugin-fb-connect.js"></script>
+  	<!-- facebook js sdk -->
+  	<script src="/static/opt/facebook_js_sdk.js"></script> 
+  	
+  	<!-- android specific -->
+	<script type="text/javascript" src="/static/opt/cordova-2.1.0.js"></script>
+	<script type="text/javascript" src="/static/opt/main.js"></script>
+	<script type="text/javascript" src="/static/opt/mobile.js"></script>
+	<script type="text/javascript" src="/static/opt/android-websocket.js"></script>
+
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBeFi1IlkP7DE-7JkIojlS-K-ivi-SB_Bo&sensor=false"></script>
+
+	<!-- config -->
+	<script type="text/javascript">
+		var DEBUG_MODE = true;
+	</script>
+
+	<!-- core -->
+	<script type="text/javascript" src="/static/js/controller/01_AbstractObject.js"></script>
+	<script type="text/javascript" src="/static/js/controller/02_Exception.js"></script>
+	<script type="text/javascript" src="/static/js/controller/03_Publisher.js"></script>
+	<script type="text/javascript" src="/static/js/controller/04_Controller.js"></script>
+	<script type="text/javascript" src="/static/js/controller/05_ActionRequest.js"></script>
+	<script type="text/javascript" src="/static/js/model/01_ObservableModelObject.js"></script>
+	<script type="text/javascript" src="/static/js/model/02_Model.js"></script>
+	<script type="text/javascript" src="/static/js/model/03_UserSessionModel.js"></script>
+	<script type="text/javascript" src="/static/js/model/04_OptionModel.js"></script>
+	<script type="text/javascript" src="/static/js/model/05_ModelEvent.js"></script>
+	<script type="text/javascript" src="/static/js/model/entities/01_Entity.js"></script>
+	<script type="text/javascript" src="/static/js/model/entities/02_Country.js"></script>
+	<script type="text/javascript" src="/static/js/model/entities/03_City.js"></script>
+	<script type="text/javascript" src="/static/js/model/entities/04_UserProfile.js"></script>
+	
+	<!-- communication -->
+	<script type="text/javascript" src="/static/js/communication/01_ServerHandler.js"></script>
+	<script type="text/javascript" src="/static/js/communication/02_ServerResponse.js"></script>
+	<script type="text/javascript" src="/static/js/communication/03_FailureServerResponse.js"></script>
+
+	<!-- view related -->
+	<script type="text/javascript" src="/static/js/view/01_View.js"></script>
+	<script type="text/javascript" src="/static/js/view/02_Component.js"></script>
+	<script type="text/javascript" src="/static/js/view/03_ComponentContainer.js"></script>
+	<script type="text/javascript" src="/static/js/view/04_DropDownMenu.js"></script>
+	<script type="text/javascript" src="/static/js/view/05_StatusMenu.js"></script>
+	<script type="text/javascript" src="/static/js/view/06_TabPanel.js"></script>
+	<script type="text/javascript" src="/static/js/view/07_DialogWindow.js"></script>
+	<script type="text/javascript" src="/static/js/view/08_ProfileDialogWindow.js"></script>
+	<script type="text/javascript" src="/static/js/view/09_Page.js"></script>
+	<script type="text/javascript" src="/static/js/view/10_PageNavigator.js"></script>
+	<script type="text/javascript" src="/static/js/view/11_Wizard.js"></script>
+	<script type="text/javascript" src="/static/js/view/12_WizardPage.js"></script>
+	<script type="text/javascript" src="/static/js/view/13_LandingPage.js"></script>
+	<script type="text/javascript" src="/static/js/view/14_RegisterPage.js"></script>
+	<script type="text/javascript" src="/static/js/view/15_SearchPage.js"></script>
+	<script type="text/javascript" src="/static/js/view/16_MessagesPage.js"></script>
+	<script type="text/javascript" src="/static/js/view/17_SettingsPage.js"></script>
+	<script type="text/javascript" src="/static/js/view/18_IconLabel.js"></script>
+	<script type="text/javascript" src="/static/js/view/19_Label.js"></script>
+	<script type="text/javascript" src="/static/js/view/20_GeoMap.js"></script>
+	<script type="text/javascript" src="/static/js/view/21_Form.js"></script>
+	<script type="text/javascript" src="/static/js/view/22_LoginForm.js"></script>
+	<script type="text/javascript" src="/static/js/view/23_GeoMatchesFinder.js"></script>
+	<script type="text/javascript" src="/static/js/view/24_BestMatchesForm.js"></script>
+	<script type="text/javascript" src="/static/js/view/25_CustomSearchForm.js"></script>
+	<script type="text/javascript" src="/static/js/view/26_ResultBrowser.js"></script>
+	<script type="text/javascript" src="/static/js/view/27_AccountForm.js"></script>
+	<script type="text/javascript" src="/static/js/view/28_ProfileForm.js"></script>
+	<script type="text/javascript" src="/static/js/view/29_AdvancedForm.js"></script>
+	<script type="text/javascript" src="/static/js/view/30_MediaManager.js"></script>
+	<script type="text/javascript" src="/static/js/view/31_SlideBrowser.js"></script>
+	<script type="text/javascript" src="/static/js/view/32_MediaBrowser.js"></script>
+	<script type="text/javascript" src="/static/js/view/33_QuickSearchForm.js"></script>
+	<script type="text/javascript" src="/static/js/Application.js"></script>
+</head>
+
+<body id="view" onload="application.start()">
+</body>
+
+</html> 
+

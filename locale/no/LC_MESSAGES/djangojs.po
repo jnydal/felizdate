@@ -1,0 +1,1067 @@
+# Felizdate norwegian translations.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR jnydal@gmail.com, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-09 17:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: static/db_translation_keys.js:3
+msgid ""
+"* By signing-up via Facebook© account you don't need to create a login "
+"account. Interests is copied to your Felizdate profile which you can change "
+"anytime. Your privacy is our main concern."
+msgstr ""
+
+#: static/db_translation_keys.js:5 static/js/js.min.js:1
+#: static/js/view.min.js:1 static/js/view/08_ProfileDialogWindow.js:231
+#: static/js/view/25_CustomSearchForm.js:50
+#: static/js/view/29_AdvancedForm.js:16 static/js/view/29_AdvancedForm.js:70
+msgid "Body"
+msgstr "Kropp"
+
+#: static/db_translation_keys.js:6 static/js/js.min.js:1
+#: static/js/view.min.js:1 static/js/view/08_ProfileDialogWindow.js:233
+#: static/js/view/25_CustomSearchForm.js:52
+#: static/js/view/29_AdvancedForm.js:18 static/js/view/29_AdvancedForm.js:72
+msgid "Skin"
+msgstr "Hud"
+
+#: static/db_translation_keys.js:7 static/js/js.min.js:1
+#: static/js/view.min.js:1 static/js/view/08_ProfileDialogWindow.js:232
+#: static/js/view/25_CustomSearchForm.js:54
+#: static/js/view/29_AdvancedForm.js:17 static/js/view/29_AdvancedForm.js:74
+msgid "Hair"
+msgstr "Hår"
+
+#: static/db_translation_keys.js:8 static/js/js.min.js:1
+#: static/js/view.min.js:1 static/js/view/08_ProfileDialogWindow.js:234
+#: static/js/view/25_CustomSearchForm.js:56
+#: static/js/view/29_AdvancedForm.js:19 static/js/view/29_AdvancedForm.js:76
+msgid "Eyes"
+msgstr "Øyne"
+
+#: static/db_translation_keys.js:9
+msgid "Other"
+msgstr "Annet"
+
+#: static/db_translation_keys.js:10
+msgid "Slim"
+msgstr "Slank"
+
+#: static/db_translation_keys.js:11
+msgid "Normal"
+msgstr "Normal"
+
+#: static/db_translation_keys.js:12
+msgid "Athletic"
+msgstr "Athletisk"
+
+#: static/db_translation_keys.js:13
+msgid "Some extra pounds"
+msgstr "Noen ekstra kilo"
+
+#: static/db_translation_keys.js:14
+msgid "Fat"
+msgstr "Overvektig"
+
+#: static/db_translation_keys.js:15
+msgid "Fair"
+msgstr "Lys"
+
+#: static/db_translation_keys.js:16
+msgid "Bronze"
+msgstr "Lys brun"
+
+#: static/db_translation_keys.js:17
+msgid "Tanned"
+msgstr "Tan"
+
+#: static/db_translation_keys.js:18 static/db_translation_keys.js.c:21
+msgid "Dark"
+msgstr "Mørk"
+
+#: static/db_translation_keys.js:19
+msgid "Blond"
+msgstr "Blond"
+
+#: static/db_translation_keys.js:20 static/db_translation_keys.js.c:24
+msgid "Brown"
+msgstr "Brune"
+
+#: static/db_translation_keys.js:22
+msgid "Blue"
+msgstr "Blå"
+
+#: static/db_translation_keys.js:23
+msgid "Green"
+msgstr "Grønne"
+
+#: static/db_translation_keys.js:26
+msgid "Administrative / Secretarial / Clerical"
+msgstr "Administrative / sekretær"
+
+#: static/db_translation_keys.js:27
+msgid "Advertising / Media"
+msgstr "Reklame / Media"
+
+#: static/db_translation_keys.js:28
+msgid "Artistic / Creative / Performance"
+msgstr "Kunst / Artist / Håndverk"
+
+#: static/db_translation_keys.js:29
+msgid "Construction / Trades"
+msgstr "Byggebransje / Handel"
+
+#: static/db_translation_keys.js:30
+msgid "Education / Academic"
+msgstr "Utdanning / Akademisk"
+
+#: static/db_translation_keys.js:31
+msgid "Entertainment / Media"
+msgstr "Underholdning / Media"
+
+#: static/db_translation_keys.js:32
+msgid "Executive / Management / HR"
+msgstr "Leder / Rekruttering"
+
+#: static/db_translation_keys.js:33
+msgid "Farming / Agriculture"
+msgstr "Agrikultur"
+
+#: static/db_translation_keys.js:34
+msgid "Finance / Banking / Real Estate"
+msgstr "Finans / Bank / Eiendom"
+
+#: static/db_translation_keys.js:35
+msgid "Fire / Law enforcement / Security"
+msgstr "Brann / Politi / Sikkerhet"
+
+#: static/db_translation_keys.js:36
+msgid "Hair dresser / Personal Grooming"
+msgstr "Frisør / Barberer"
+
+#: static/db_translation_keys.js:37
+msgid "IT / Communications"
+msgstr "IT / Data"
+
+#: static/db_translation_keys.js:38
+msgid "Laborer / Manufacturing"
+msgstr "Produksjonsmedarbeider"
+
+#: static/db_translation_keys.js:39
+msgid "Legal"
+msgstr "Advokat"
+
+#: static/db_translation_keys.js:40
+msgid "Medical / Dental / Veterinary"
+msgstr "Lege / Tannlege / Veterinær"
+
+#: static/db_translation_keys.js:41
+msgid "Military"
+msgstr "Militæret"
+
+#: static/db_translation_keys.js:42
+msgid "Nanny / Child care"
+msgstr "Barnevakt / Barnehage assistent"
+
+#: static/db_translation_keys.js:43
+msgid "No occupation / Stay at home"
+msgstr "Inget yrke / Er hjemmeværende"
+
+#: static/db_translation_keys.js:44
+msgid "Non-profit / clergy / social services"
+msgstr "Ikke-profit / Sosialarbeider"
+
+#: static/db_translation_keys.js:45
+msgid "Political / Govt / Civil service"
+msgstr "Politisk / Statsansatt / Sivile tjenester"
+
+#: static/db_translation_keys.js:46
+msgid "Retail / Food services"
+msgstr "Handel / Mat tjenester"
+
+#: static/db_translation_keys.js:47
+msgid "Retired"
+msgstr "Pensjonert"
+
+#: static/db_translation_keys.js:48
+msgid "Sales / Marketing"
+msgstr "Salg / Marked"
+
+#: static/db_translation_keys.js:49
+msgid "Self employed"
+msgstr "Har eget firma"
+
+#: static/db_translation_keys.js:50
+msgid "Sports / recreation"
+msgstr "Sport"
+
+#: static/db_translation_keys.js:51
+msgid "Student"
+msgstr "Student"
+
+#: static/db_translation_keys.js:52
+msgid "Technical / Science / Engineering"
+msgstr "Teknisk / Forsking / Ingeniør"
+
+#: static/db_translation_keys.js:53
+msgid "Travel / Hospitality"
+msgstr "Reise / Vertskap"
+
+#: static/db_translation_keys.js:54
+msgid "Unemployed"
+msgstr "Arbeidsledig"
+
+#: static/db_translation_keys.js:56
+msgid "Vacational"
+msgstr "Yrkeskole"
+
+#: static/db_translation_keys.js:58
+msgid "Socialist"
+msgstr "Rød"
+
+#: static/db_translation_keys.js:59
+msgid "Democrat"
+msgstr "Grønn"
+
+#: static/db_translation_keys.js:60
+msgid "Liberal"
+msgstr "Blå"
+
+#: static/db_translation_keys.js:61
+msgid "Republican"
+msgstr "Veldig blå"
+
+#: static/db_translation_keys.js:63
+msgid "Christian"
+msgstr "Kristen"
+
+#: static/db_translation_keys.js:64
+msgid "Muslim"
+msgstr "Muslim"
+
+#: static/db_translation_keys.js:65
+msgid "Orthodox"
+msgstr "Ortodoks"
+
+#: static/db_translation_keys.js:66
+msgid "non-religious"
+msgstr "ikke-religiøs"
+
+#: static/db_translation_keys.js:68
+msgid "single"
+msgstr "singel"
+
+#: static/db_translation_keys.js:69
+msgid "in relationship"
+msgstr "i et forhold"
+
+#: static/db_translation_keys.js:70
+msgid "married"
+msgstr "gift"
+
+#: static/db_translation_keys.js:71
+msgid "divorced"
+msgstr "skilt"
+
+#: static/db_translation_keys.js:73
+msgid "Male"
+msgstr "Mann"
+
+#: static/db_translation_keys.js:74
+msgid "Female"
+msgstr "Kvinne"
+
+#: static/db_translation_keys.js:76
+msgid "Flirt"
+msgstr "Flørt"
+
+#: static/db_translation_keys.js:77
+msgid "Partner"
+msgstr "Partner"
+
+#: static/db_translation_keys.js:78
+msgid "Friend"
+msgstr "Venn"
+
+#: static/db_translation_keys.js:79
+msgid "Sunday friend"
+msgstr "Veldig veldig god venn..."
+
+#: static/3rdjs/03_jQueryPlugins.js:166 static/3rdjs/3rdjs.min.js:156
+msgid "Weak"
+msgstr "Svakt"
+
+#: static/3rdjs/03_jQueryPlugins.js:170 static/3rdjs/3rdjs.min.js:156
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/07_DialogWindow.js:20 static/js/view/07_DialogWindow.js:23
+msgid "Ok"
+msgstr "Ok"
+
+#: static/3rdjs/03_jQueryPlugins.js:174 static/3rdjs/3rdjs.min.js:156
+msgid "Strong"
+msgstr "Sterkt"
+
+#: static/js/common.min.js:1 static/js/js.min.js:1
+#: static/js/common/01_Utilities.js:150
+msgid "hours ago"
+msgstr "timer siden"
+
+#: static/js/common.min.js:1 static/js/js.min.js:1
+#: static/js/common/01_Utilities.js:297
+msgid "Video is not supported."
+msgstr "Video er ikke støttet"
+
+#: static/js/communication.min.js:1 static/js/js.min.js:1
+#: static/js/communication/01_ServerHandler.js:172
+#: static/js/communication/01_ServerHandler.js:175
+msgid "Server did not respond. Try again later."
+msgstr "Server svarte ikke... prøv igjen om litt... :)"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1 static/js/view/01_View.js:72
+#: static/js/view/14_RegisterPage.js:36
+msgid "Search"
+msgstr "Søk"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1 static/js/view/01_View.js:73
+msgid "Settings"
+msgstr "Instillinger"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1 static/js/view/01_View.js:74
+msgid "Logout"
+msgstr "Logg ut"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1 static/js/view/01_View.js:112
+msgid "Terms of use"
+msgstr "Bruksvillkår"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1 static/js/view/01_View.js:112
+msgid "Privacy policy"
+msgstr "Personvern"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1 static/js/view/01_View.js:464
+msgid "Facebook login failed."
+msgstr "Facebook inloggingen feilet."
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/04_DropDownMenu.js:315
+#: static/js/view/08_ProfileDialogWindow.js:56
+msgid "Messages"
+msgstr "Meldinger"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/04_DropDownMenu.js:319
+msgid "View all messages"
+msgstr "Vis alle meldinger"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/05_StatusMenu.js:16 static/js/view/05_StatusMenu.js.c:32
+msgid "GeoOnline"
+msgstr "GeoOnline"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/05_StatusMenu.js:19 static/js/view/05_StatusMenu.js.c:36
+msgid "Online"
+msgstr "Online"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/05_StatusMenu.js:20 static/js/view/05_StatusMenu.js.c:40
+msgid "Away"
+msgstr "Borte"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/05_StatusMenu.js:21 static/js/view/05_StatusMenu.js.c:44
+msgid "Invisible"
+msgstr "Usynlig"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/07_DialogWindow.js:103 static/js/view/07_DialogWindow.js:105
+#: static/js/view/08_ProfileDialogWindow.js:24
+#: static/js/view/08_ProfileDialogWindow.js:26
+msgid "Close"
+msgstr "Lukk"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/07_DialogWindow.js:108
+msgid "Crop"
+msgstr "Kutt"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/07_DialogWindow.js:174
+msgid "popup.info.header.title"
+msgstr ""
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/07_DialogWindow.js:177
+msgid "common.close"
+msgstr "Lukk"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/07_DialogWindow.js:229
+msgid "common.done"
+msgstr "Ok"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/07_DialogWindow.js:233 static/js/view/07_DialogWindow.js:302
+msgid "common.cancel"
+msgstr "Avbryt"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/07_DialogWindow.js:296
+msgid "common.ok"
+msgstr "Ok"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/07_DialogWindow.js:337
+msgid "Error"
+msgstr "Feil"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:75
+#: static/js/view/08_ProfileDialogWindow.js:77
+msgid "General"
+msgstr "Generelt"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:79
+msgid "Details"
+msgstr "Detaljer"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:80
+#: static/js/view/17_SettingsPage.js:58
+msgid "Media"
+msgstr "Media"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:81
+msgid "Cheer!"
+msgstr "Blunk"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:82
+msgid "Block"
+msgstr "Blokker"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:128
+msgid "send"
+msgstr "send"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:186
+msgid "female"
+msgstr "kvinne"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:186
+msgid "male"
+msgstr "mann"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:187
+#: static/js/view/25_CustomSearchForm.js:18
+#: static/js/view/28_ProfileForm.js:23
+msgid "Gender"
+msgstr "Kjønn"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:188
+msgid "Age"
+msgstr "Alder"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:189
+#: static/js/view/28_ProfileForm.js:25
+msgid "Marital status"
+msgstr "Sivilstatus"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:190
+#: static/js/view/25_CustomSearchForm.js:41
+msgid "Looking for"
+msgstr "Ser etter"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:203
+#: static/js/view/17_SettingsPage.js:48 static/js/view/28_ProfileForm.js:64
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:216
+#: static/js/view/13_LandingPage.js:157 static/js/view/29_AdvancedForm.js:78
+msgid "Interests"
+msgstr "Interesser"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:230
+msgid "Basics"
+msgstr "Grunnleggende"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:235
+#: static/js/view/25_CustomSearchForm.js:37
+#: static/js/view/29_AdvancedForm.js:32 static/js/view/29_AdvancedForm.js:52
+msgid "Occupation"
+msgstr "Yrke"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:236
+#: static/js/view/25_CustomSearchForm.js:38
+#: static/js/view/29_AdvancedForm.js:33 static/js/view/29_AdvancedForm.js:53
+msgid "Educational degree"
+msgstr "Utdanning"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:237
+#: static/js/view/29_AdvancedForm.js:40
+msgid "Political"
+msgstr "Politisk"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:238
+#: static/js/view/25_CustomSearchForm.js:40
+#: static/js/view/29_AdvancedForm.js:43 static/js/view/29_AdvancedForm.js:63
+msgid "Religion"
+msgstr "Religion"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:239
+#: static/js/view/29_AdvancedForm.js:50
+msgid "Partner preferences"
+msgstr "Partner preferanser"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:240
+msgid "Partner occupation"
+msgstr "Yrke"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:241
+msgid "Partner educational degree"
+msgstr "Utdanning"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:242
+msgid "Partner political"
+msgstr "Politisk"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/08_ProfileDialogWindow.js:243
+msgid "Partner religion"
+msgstr "Religion"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/11_Wizard.js:19
+msgid "Previous"
+msgstr "Forrige"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/11_Wizard.js:20
+msgid "Next"
+msgstr "Neste"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:42
+msgid "Information"
+msgstr "Informasjon"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:43
+msgid "See selection"
+msgstr "Se utvalg"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:56
+msgid "Sign-up"
+msgstr "Bli med!"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:65
+msgid "Sign-up via facebook (*)"
+msgstr "Logg inn med facebook!"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:73
+msgid ""
+"* By signing-up via Facebook&copy; account you don't need to create "
+"a<br>login account. Interests is copied to your Felizdate profile "
+"which<br>you can change anytime. Your privacy is our main concern."
+msgstr ""
+"* Når du registrerer deg via Facebook&copy; trenger du ikke lage ekstra "
+"innloggingskonto. Interesser bli også automatisk kopiert inn i din Felizdate "
+"profil som du kan redigere når som helst. Din anonymitet er viktigst for oss."
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:109
+msgid "Match based on custom interests"
+msgstr "Match basert på egendefinerte interesser"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:110
+msgid "Location based match feature"
+msgstr "Lokasjonsbasert match"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:111
+msgid "Realtime chat"
+msgstr "Realtid chat"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:112
+msgid "Media album"
+msgstr "Media album"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:113
+msgid "Report/blocking feature"
+msgstr "Rapportering/blokkeringsfunksjon"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:114
+msgid "Available on web, pads and mobiles"
+msgstr "Tilgjengelig på web, pads og mobiler"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:115
+msgid "100% anonymity"
+msgstr "100% anonymnt"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:128
+msgid "<span>FREE premium membership until July 2013</span>"
+msgstr "<span>Gratis premium medlemskap til Juli 2013</span>"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:137
+msgid "<span>cooking</span>"
+msgstr "<span>matlaging</span>"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:140
+msgid "<span>skiing</span>"
+msgstr "<span>ski</span>"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:143
+msgid "<span>travel</span>"
+msgstr "<span>reise</span>"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:146
+msgid "<span>poker</span>"
+msgstr "<span>poker</span>"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:149
+msgid "<span>movies</span>"
+msgstr "<span>filmer</span>"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:152
+msgid ""
+"<h2>Match based on custom interests</h2><p>Let the system find perfect "
+"matches based on your custom interests.</p>"
+msgstr ""
+"<h2>Match basert på egendefinerte interesser</h2><p>La tjenesten finne den "
+"optimale match for deg basert på dine egendefinerte interesser.</p>"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:160 static/js/view/21_Form.js:1009
+msgid "add"
+msgstr "legg til"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:163
+msgid "submit"
+msgstr "lagre"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:166
+msgid "private journalism|"
+msgstr "privat journalistikk|"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:169
+msgid "dancing"
+msgstr "dansing"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:201
+msgid ""
+"<h2>Location based match feature</h2><p>Felizdate provides a location match "
+"feature for finding potential dates nearby. You are maybe in a cafe or "
+"restaurant and want to see if any girls are close to you.</p>"
+msgstr ""
+"<h2>Lokasjonsbasert match</h2><p>Felizdate tilbyr en lokasjonsbasert match "
+"løsning så du kan finne potensielle dater nær deg - foreksempel når du "
+"sitter på en cafe i sentrum.</p>"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:213
+msgid ""
+"<h2>Media album</h2><p>Show more of yourself via the media album, Upload MP4 "
+"and OGG videos, in addition to images.</p>"
+msgstr ""
+"<h2>Media album</h2><p>Få frem flere sider av deg selv ved hjelp av media "
+"album løsningen hvor du kan laste opp både video og bilder.</p>"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:225
+msgid ""
+"<h2>Realtime chat</h2><p>Chat with multiple persons at the same time via the "
+"unique dialog system. The extension chat panel allows you to read profiles "
+"at the same time as your in a active dialog.</p>"
+msgstr ""
+"<h2>Realtids chat</h2><p>Chat med mange samtidig gjennom det unike dialog "
+"systemet. Konseptet lar deg på en lettvint måte chatte mens du kan lese "
+"profilen til de du snakker med.</p>"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/13_LandingPage.js:235
+msgid ""
+"<h2>Portability</h2><p>Felizdate supports most newer browsers in desktops, "
+"laptops, pads and mobiles. Our aim is to create the ultimate online dating "
+"experience.</p>"
+msgstr ""
+"<h2>Portabilitet</h2><p>Felizdate støtter de fleste nyere nettlesere på "
+"vanlige datamaskiner, laptops, pads og mobiler. Vårt fokus er å lage den "
+"enkleste, raskeste og mest brukervennlige datingtjenesten i Norge.</p>"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:24 static/js/view/17_SettingsPage.js:24
+msgid "Image"
+msgstr "Bilde"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:42
+msgid "1. Account"
+msgstr "1. Konto"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:43
+msgid "2. Profile"
+msgstr "2. Profil"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:44
+msgid "3. Enjoy"
+msgstr "3. Ha det gøy!"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:48
+msgid "Account information"
+msgstr "Innloggingsinformasjon"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:49
+msgid "Step 1: "
+msgstr "Steg 1:"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:50
+msgid ""
+"Create new login account, or use your facebook account to authorize at this "
+"site."
+msgstr "Lag ny innloggingskonto"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:54
+msgid "Set up your profile basics"
+msgstr "Sett opp din profil"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:55
+msgid "Step 2: "
+msgstr "Steg 2:"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:56
+msgid "Advanced profile setup can be done later."
+msgstr "Avanserte profildetaljer kan settes opp senere."
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:59
+msgid "Find a friend"
+msgstr "Finn en partner"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:60
+msgid "Step 3: "
+msgstr "Steg 3:"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/14_RegisterPage.js:61
+msgid "Meet people with your interests."
+msgstr "Møt partnere med samme interesser som deg"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/15_SearchPage.js:37
+msgid "GeoMatch"
+msgstr "GeoMatch"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/15_SearchPage.js:38
+msgid "Best matches"
+msgstr "Beste treff"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/15_SearchPage.js:39
+msgid "Custom"
+msgstr "Tilpasset"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/15_SearchPage.js:67
+msgid "Service quality suggestion: Upload profileimage to see profileimages of "
+"other users."
+msgstr "Tjenesteforbedring: For å se profilbilder av andre brukere, last opp bilde på Instillinger -> "
+"Profil -> Profilbilde"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/16_MessagesPage.js:26
+#: static/js/view/24_BestMatchesForm.js:17
+#: static/js/view/25_CustomSearchForm.js:72
+msgid "search"
+msgstr "søk"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/17_SettingsPage.js:44
+msgid "Type"
+msgstr "Type"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/17_SettingsPage.js:45
+msgid "Bug"
+msgstr ""
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/17_SettingsPage.js:46
+msgid "Improvement"
+msgstr "Forbedring"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/17_SettingsPage.js:47
+msgid "User"
+msgstr "Bruker"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/17_SettingsPage.js:55
+msgid "Account"
+msgstr "Brukerkonto"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/17_SettingsPage.js:56
+msgid "Profile"
+msgstr "Profil"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/17_SettingsPage.js:57
+msgid "Advanced"
+msgstr "Avansert"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/17_SettingsPage.js:59
+msgid "Report"
+msgstr "Rapporter"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/17_SettingsPage.js:105
+msgid "No image uploaded."
+msgstr "Bilde er ikke lastet opp"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/17_SettingsPage.js:107
+msgid "Active Image:"
+msgstr "Aktivt bilde"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/17_SettingsPage.js:177
+msgid "Image uploaded. Save profile to submit choice."
+msgstr "Bilde er lastet opp. Lagre profilen for å bekrete bildet."
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/20_GeoMap.js:41
+msgid "Your position"
+msgstr "Din posisjon"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1 static/js/view/21_Form.js:53
+msgid "Submit"
+msgstr "Ok"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1 static/js/view/21_Form.js:826
+#: static/js/view/21_Form.js.c:854
+msgid "select"
+msgstr "velg"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/22_LoginForm.js:10 static/js/view/27_AccountForm.js:10
+msgid "E-mail"
+msgstr "E-post"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/22_LoginForm.js:13 static/js/view/27_AccountForm.js:15
+msgid "Password"
+msgstr "Passord"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/22_LoginForm.js:20
+msgid "Login"
+msgstr "Logg inn"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/22_LoginForm.js:24
+msgid "Register"
+msgstr "Registrer"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/22_LoginForm.js:64
+msgid "forgotten password?"
+msgstr "glemt passord?"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/23_GeoMatchesFinder.js:33
+msgid "GeoMatcher is only available in GeoOnline mode."
+msgstr "GeoMatch er kun tilgjengelig i GeoOnline modus."
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/23_GeoMatchesFinder.js:36
+msgid "GeoMatcher is only available for handheld devices."
+msgstr "GeoMatch er kun tilgjengelig for håndholdte enheter."
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/25_CustomSearchForm.js:14
+msgid "Min age"
+msgstr "Minimum alder"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/25_CustomSearchForm.js:16
+msgid "Max age"
+msgstr "Maksimum alder"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/25_CustomSearchForm.js:20
+#: static/js/view/28_ProfileForm.js:29
+msgid "Country"
+msgstr "Land"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/25_CustomSearchForm.js:22
+#: static/js/view/28_ProfileForm.js:31
+msgid "City"
+msgstr "By"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/25_CustomSearchForm.js:39
+#: static/js/view/29_AdvancedForm.js:42 static/js/view/29_AdvancedForm.js:62
+msgid "Political alignment"
+msgstr "Politisk syn"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/25_CustomSearchForm.js:59
+msgid "Logged in"
+msgstr "Innlogget"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/26_ResultBrowser.js:16
+msgid "back"
+msgstr "tilbake"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/27_AccountForm.js:11
+msgid ""
+"Your password will be sent to this address. Your address will not be made "
+"public."
+msgstr ""
+"Passordet ditt blir sent til denne adressen. Adressen vil ikke bli synlig "
+"for andre."
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/27_AccountForm.js:19
+msgid "Confirm password"
+msgstr "Bekreft passord"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/27_AccountForm.js:28
+msgid "Agree to service conditions"
+msgstr "Aksepter tjenestebetingelser"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/27_AccountForm.js:29
+msgid "I agree to the terms and conditions of use and the privacy policy"
+msgstr "Jeg godtar bruk og personverns-villkårene"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/28_ProfileForm.js:17
+msgid "Profile name"
+msgstr "Profilnavn"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/28_ProfileForm.js:21
+msgid "Year of birth"
+msgstr "Født"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/28_ProfileForm.js:27
+msgid "Seeking gender"
+msgstr "Søker kjønn"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/29_AdvancedForm.js:14
+msgid "Appearance"
+msgstr "Utseende"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/29_AdvancedForm.js:30
+msgid "Profession"
+msgstr "Yrke"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/30_MediaManager.js:14
+msgid "Upload"
+msgstr "Last opp"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/30_MediaManager.js:15
+msgid "Supports PNG, GIF, JPG, MP4 and OGG (max 10mb)"
+msgstr "Støtter PNG, GIF, JPG, MP4 og OGG (maks 10mb)"
+
+#: static/js/js.min.js:1 static/js/view.min.js:1
+#: static/js/view/30_MediaManager.js:25
+msgid "Delete"
+msgstr "Slett"
+
+#~ msgid "seconds ago"
+#~ msgstr "sekunder siden"
+
+#~ msgid "minutes ago"
+#~ msgstr "minutter siden"
+
+#~ msgid "New message"
+#~ msgstr "Ny melding"
+
+msgid "Have children"
+msgstr "Har barn"
+
+msgid "Without children"
+msgstr "Uten barn"
+
+msgid "Has image"
+msgstr "Med bilde"
+
+msgid "Open subscription"
+msgstr "Ingen bindingstid"
+
+msgid "Switch to classic view"
+msgstr "Klassisk visning"

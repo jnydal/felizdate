@@ -1,0 +1,75 @@
+.MessagesPage {
+    background-color:#fff;
+    padding:15px
+}
+
+.MessagesPage > .header {
+    height:50px;
+    width:inherit
+}
+
+.MessagesPage > .header > .SubmitButton {
+	float:left
+}
+
+.MessagesPage > .header > .Form {
+    float:right;
+    height:50px;
+    width:265px;
+    padding:0;
+    background-color:transparent
+}
+
+.MessagesPage > .header > .Form > .body {
+    vertical-align:top;
+    float:left
+}
+
+.MessagesPage > .header > .Form > .footer {
+    margin-left:5px;
+    vertical-align:top;
+    width:auto;
+    clear:none
+}
+
+.MessagesPage .footer .SubmitButton {
+    margin-right:0px
+}
+
+.MessagesPage > .content {
+	width:inherit
+}
+
+.MessagesPage .Message {
+	list-style-type:none
+}
+
+.MessagesPage .Message > a {
+    display: block;
+    padding: 10px 0;
+    width: inherit;
+}
+
+.MessagesPage .Message > a:hover {
+	background-color:#ffa
+}
+
+.MessagesPage .Message img {
+	margin-left:5px
+}
+
+.MessagesPage .Message .sender {
+	font-weight:bold;
+	vertical-align:top;
+	margin-left:15px
+}
+
+.MessagesPage .Message .text {
+	vertical-align:top;
+	margin-left:25px
+}
+
+.MessagesPage .Message .timestamp {
+	float:right;
+	margin-right:5px
+}

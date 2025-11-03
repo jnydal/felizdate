@@ -1,0 +1,191 @@
+.hidden {
+	display:none !important
+}
+
+.invisible {
+	visibility:hidden !important
+}
+
+.clearfix {
+    clear:both
+}
+
+*::selection,
+*::-moz-selection,
+*::-webkit-selection {
+    background-color:transparent
+}
+
+input::selection,
+input::-moz-selection,
+input::-webkit-selection {
+    background-color:#00f !important
+}
+
+.stroke {
+-webkit-text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+-moz-text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+   2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+-o-text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000
+}
+
+.templateContent {
+	background-color: #FFFFFF;
+    border: 1px solid #333333;
+    margin: 0 auto;
+    max-width: 910px;
+    min-height: 100px;
+    min-width: 320px;
+    padding: 10px;
+    width: 100%;
+}
+
+.templateContent > h1 {
+	padding:0;
+	font-size:24px
+}
+
+.templateContent .button {
+	padding:0
+}
+
+  /* tooltip styling */
+  .tooltip {
+	position:absolute;
+    background-color:#000;
+    border:1px solid #eee;
+    padding:10px;
+    font-size:11px;
+    color:#fff;
+    width:200px;
+    max-width:200px;
+  }
+
+  .tooltip span {
+  	padding:0 40px;
+  	display:block
+  }
+
+  /* a .label element inside tooltip */
+  .tooltip .label {
+    color:yellow;
+    width:35px;
+  }
+
+  .tooltip a {
+    color:#ad4;
+    font-size:11px;
+    font-weight:bold;
+  }
+  
+  .tooltip a.close {
+    float:right;
+  }
+  
+  .tooltip.info {
+    background-color:#eee;
+	color:#333;
+	border:#333
+  }
+  
+  .tooltip.notification {
+    background-color:#eee;
+    background-image: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/information_40.png");
+    background-position: 5px 5px;
+    background-repeat:no-repeat;
+	color:#333;
+	border:#333;
+	border-radius: 3px
+  }

@@ -1,0 +1,40 @@
+.TabPanel {
+	width:inherit;
+}
+
+.TabPanel > .content {
+	width:inherit;
+	clear:both;
+	background-color:#fff
+}
+
+.TabPanel > ul {
+	clear:both;
+	width:inherit;
+	padding-bottom:20px;
+	color:#fff
+}
+
+.TabPanel > ul > li {
+    display:inline;
+	border-bottom:5px solid #000;
+	float:left
+}
+
+.TabPanel > ul > li > a {
+	cursor:pointer
+}
+
+.TabPanel > ul > li > a {
+    float:left;
+    padding:5px 45px
+}
+
+.TabPanel > ul > li.selected {
+	background-image:none;
+	border-bottom:5px solid #f00
+}
+
+.TabPanel > ul > li.disabled {
+	display:none
+}

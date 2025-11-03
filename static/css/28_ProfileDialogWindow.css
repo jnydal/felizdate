@@ -1,0 +1,208 @@
+.ProfileDialogWindow {
+    left:inherit;
+}
+
+.ProfileDialogWindow .generalInfo .shortFacts {
+    float: left;
+    text-align: left;
+    width: 250px;
+}
+
+.ProfileDialogWindow .generalInfo .interests {
+    float: left;
+    width: 250px;
+}
+
+.ProfileDialogWindow .shortFacts li.header {
+	margin-top:5px;
+	margin-bottom:5px;
+	border-bottom:1px solid #333;
+	font-weight:bold;
+	text-align:left
+}
+
+.ProfileDialogWindow .shortFacts > li {
+    list-style-type:none;
+    text-align:right;
+    clear:both
+}
+
+.ProfileDialogWindow .shortFacts > li > span:first-child {
+    float:left
+}
+
+.ProfileDialogWindow .statusIcon {
+    float:left;
+    margin-left:4px;
+    margin-top:4px;
+    width:20px;
+    height:20px;
+    visibility:visible !important;
+    background-image: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/sprites.png");
+}
+
+.ProfileDialogWindow .statusIcon.invisible {
+	background-position: -2px -74px;
+}
+
+.ProfileDialogWindow .statusIcon.away {
+	background-position: -2px -94px;
+}
+
+.ProfileDialogWindow .statusIcon.online {
+	background-position: -2px -115px;
+}
+
+.ProfileDialogWindow .statusIcon.geoOnline {
+	background-position:-2px -135px;
+}
+
+.ProfileDialogWindow .leftColumn {
+    float:left;
+    margin-right:10px
+}
+
+.ProfileDialogWindow .leftColumn > img {
+    float:left;
+    border:1px solid #333;
+    margin-right:5px
+}
+
+.ProfileDialogWindow .defaultInfo .content{
+    text-align:left;
+    width:300px;
+    float:left;
+    overflow:hidden
+}
+
+.ProfileDialogWindow .description {
+    font-size:11px;
+    margin-bottom:5px
+}
+
+.ProfileDialogWindow .DropDownMenu {
+    height:42px;
+    padding:0;
+    width:auto;
+    float:left
+}
+
+.ProfileDialogWindow .DropDownMenu .icon {
+	background-image:url(http://dg1h6uvotkrdh.cloudfront.net/s/images/sprites.png);
+}
+
+.ProfileDialogWindow  .DropDownMenu .male .icon {
+    background-position: -112px -38px;
+}
+
+.ProfileDialogWindow  .DropDownMenu .female .icon {
+    background-position: -149px -36px;
+}
+
+.ProfileDialogWindow  .DropDownMenu .advanced .icon {
+    background-position: -189px -35px;
+}
+
+.ProfileDialogWindow  .DropDownMenu .media .icon {
+    background-position: -228px -34px;
+}
+
+.ProfileDialogWindow  .DropDownMenu .cheers .icon {
+    background-position: -198px 0;
+}
+
+.ProfileDialogWindow  .DropDownMenu .block .icon {
+    background-position: -170px 0;
+}
+
+.ProfileDialogWindow  .DropDownMenu .report .icon {
+    background-position: 0 0;
+}
+
+.ProfileDialogWindow  .DropDownMenu .messages .icon {
+    background-position: -97px 0;
+}
+
+.ProfileDialogWindow .messagesPanel {
+    width:300px;
+    float:left;
+    margin-right:10px;
+    margin-left:15px
+}
+
+.ProfileDialogWindow .messagesPanel .content {
+	height: auto;
+    max-height: 240px;
+    min-height: 205px;
+    overflow:hidden;
+    text-align:left
+}
+
+.ProfileDialogWindow .messagesPanel textarea {
+    width:100%;
+    margin-top:5px
+}
+
+.ProfileDialogWindow .messagesPanel .SubmitButton{
+    float:right;
+    margin-top:10px;
+    font-size: 10pt;
+	font-family: inherit;
+}
+
+.ProfileDialogWindow .messagesPanel .message {
+	font-size: 14px;
+    margin-bottom: 5px;
+    padding-right: 20px;
+    width: 100%;
+}
+
+.ProfileDialogWindow .message .sender {
+    float:left;
+    font-weight:bold;
+    font-variant:small-caps
+}
+
+.ProfileDialogWindow .message .date {
+    float:right;
+    font-size: 10px;
+    padding-right:20px
+}
+
+.ProfileDialogWindow .message .text {
+    display:block;
+    margin-top:5px;
+    clear:both
+}
+
+.ProfileDialogWindow .dialogWindowBody h3 {
+    font-size:14px
+}
+
+.ProfileDialogWindow .Interest {
+	margin-bottom:5px;
+	font-size:10px
+}
+
+.ProfileDialogWindow .Interest .remove {
+	display:none
+}
+
+.ProfileDialogWindow .menuWrapper {
+	width:inherit;
+	clear:both;
+}
+
+.ProfileDialogWindow .contentWrapper {
+	float:left;
+    width: 518px;
+}
+
+.ProfileDialogWindow .contentWrapper.full {
+	width:518px
+}
+
+.ProfileDialogWindow .mediaInfo {
+	
+}
+

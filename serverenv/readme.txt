@@ -1,0 +1,1 @@
+Put compressed project folders into felizdate.zip and run script in that folder.

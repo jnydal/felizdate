@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>	
+	<!-- styles -->
+	<link rel="stylesheet" href="/static/css/styles.min.css" type="text/css" media="screen" />
+
+	<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+{% block headerappendix %}
+{% endblock %}
+</head>
+<body id="view">
+	<div class="headerWrapper"><div id="item1" class="ComponentContainer header"><div class="logo"></div></div></div>
+        <div class="main">
+        
+        {% block main_content %}
+        	 
+        {% endblock %}
+
+        </div>
+</body>
+</html>

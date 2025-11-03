@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block main_content %}
+<div class="templateContent">
+<ul class="pendingProfileImagesSection" style="list-style-type: none;">
+<li class="header">
+	<span class="pendingProfileImages">Thumbnail</span>
+	<span class="userProfile">Profilename</span>
+	<span class="choice">Choice</span>
+	<span class="choice">Choice</span>
+</li>
+	{% for pendingProfileImages in pendingProfileImagesList %}
+		<li class="pendingProfileImages">
+			<span class="pendingProfileImages"><img src="http://www.felizdate.com/media/{{ pendingProfileImages.image_tumb.name }}"></span>
+			<span class="userProfile">{{ pendingProfileImages.userProfile.profileName }}</span>
+			<span class="choice"><a href="/appadmin/acceptPendingProfileImages?id={{ pendingProfileImages.id }}">[ accept ]</a></span>
+			<span class="choice"><a href="/appadmin/rejectPendingProfileImages?id={{ pendingProfileImages.id }}">[ reject ]</a></span>
+		</li>
+	{% endfor %}
+</ul>
+</div>
+{% endblock %}

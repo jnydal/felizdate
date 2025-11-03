@@ -1,0 +1,339 @@
+.LandingPage  {
+	font-variant: small-caps;
+}
+
+.LandingPage .TabPanel {
+    margin-bottom:20px
+}   
+
+.LandingPage .TabPanel > .content {
+    background-color: transparent;
+    margin-top:40px
+}   
+   
+.LandingPage .dateImage {
+	background-image: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/date.png");
+    height: 400px;
+    width: 600px;
+}
+
+.LandingPage .points {
+	position: absolute;
+    right: 0;
+    top: 0;
+    width: 350px;
+}
+
+.LandingPage .points .IconLabel {
+	display:block;
+	color:#fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    height:40px
+}
+
+.LandingPage .points .IconLabel .icon {
+	background-image:url(http://dg1h6uvotkrdh.cloudfront.net/s/images/sprites.png);
+	background-position: -5px -163px;
+    height: 37px;
+    width: 34px;
+	float:left
+}
+
+.LandingPage .points .IconLabel .text {
+	margin-left:10px
+}
+
+.LandingPage .stickers {
+	top: 250px;
+    height: 145px;
+    position: absolute;
+    right: 20px;
+    width: 330px;
+}
+
+.LandingPage .sticker {
+	width:145px;
+	background-repeat:no-repeat;
+	height:145px;
+	text-align:center;
+}
+
+.LandingPage .sticker > span{
+	display:block;
+	margin-left:10px;
+	width:120px;
+	color:#fff;
+	letter-spacing:3px;
+}
+
+.LandingPage .secureSticker {
+	background-image: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/secure.png");
+	margin-right:20px;
+	float:left;
+}
+
+.LandingPage .secureSticker > span{
+	padding-top:85px;
+}
+
+.LandingPage .freeSticker {
+	background-image: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/free.png");
+	float:right;
+}
+
+.LandingPage .freeSticker > span{
+	padding-top:20px;
+}
+
+.LandingPage > .SubmitButton {
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	line-height:45px;
+	padding: 0px !important;
+	width:50%;
+	font-weight: bolder
+}
+
+.LandingPage > .SubmitButton span{
+	padding-left:55px;
+	font-variant: small-caps;
+	font-size:18px;
+	display:inline-block;
+}
+
+.LandingPage > .SubmitButton.fb span {
+	background-image:url(http://dg1h6uvotkrdh.cloudfront.net/s/images/sprites.png);
+	background-position: -270px -176px;
+	background-repeat:no-repeat;
+}
+
+.LandingPage .fbNote {
+	color:#fff;
+	text-align:right;
+	font-variant: normal;
+	margin-top:10px;
+	font-size:10px;
+	margin-bottom:5px
+}
+
+.LandingPage .androidLink {
+	margin-right:10px;
+}
+
+.LandingPage .iphoneLink {
+	float:right
+}
+
+/* custom interest slide */
+
+.SlideBrowser .slidySlides figure {
+	min-height:450px;
+	position:relative
+}
+
+.SlideBrowser .movePrev, .SlideBrowser .moveNext {
+	margin-top:390px
+}
+
+.promoInterest {
+	background-image: url(http://dg1h6uvotkrdh.cloudfront.net/s/images/interestsPromo.png);
+	background-repeat:no-repeat;
+	padding: 5px;
+	height:50px;
+}
+
+.promoInterest > span {
+	background-color:#fff;
+	padding:5px;
+	color:#333;
+	margin-left:2px
+}
+
+.promoInterest.match > span {
+	-moz-box-shadow: 0px 0px 5px 1px #ffff00;
+    -webkit-box-shadow: 0px 0px 5px 1px #ffff00;
+    box-shadow: 0px 0px 5px 1px #ffff00
+}
+
+.interestsRef {
+	background-image: url(http://dg1h6uvotkrdh.cloudfront.net/s/images/interestsRef.png);
+	background-repeat:no-repeat;
+	height:320px;
+	width:320px;
+	position: absolute;
+    right: 0px;
+    top: 20px;
+}
+
+.cookingInterest {
+	background-position: 0 0px;
+}
+
+.skiingInterest {
+	background-position: 0 -60px;
+}
+
+.travelInterest {
+	background-position: 0 -125px;
+}
+
+.pokerInterest {
+	background-position: 0 -190px;
+}
+
+.moviesInterest {
+	background-position: 0 -270px;
+}
+
+.promoText {
+	color:#fff
+}
+
+.promoText > p {
+	color:#fff !important
+}
+
+/* GPS promo */
+
+.iphoneImage {
+	background-image: url(http://dg1h6uvotkrdh.cloudfront.net/s/images/iphone.png);
+	background-repeat:no-repeat;
+	width:280px;
+	height:360px;
+	position:absolute;
+	top:90px;
+	left:300px
+}
+
+.gpsRef {
+	background-image: url(http://dg1h6uvotkrdh.cloudfront.net/s/images/gpsRef.png);
+	background-repeat:no-repeat;
+	width:300px;
+	height:300px;
+	position:absolute;
+	top:70px;
+	left:0
+}
+
+/* media promo */
+
+.mediaSnapshot1 {
+    background-image: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/album_shot1.png");
+    background-repeat: no-repeat;
+    height: 430px;
+    left: 230px;
+    position: absolute;
+    width: 520px;
+    z-index: 2
+}
+
+.mediaSnapshot2 {
+    background-image: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/album_shot2.png");
+    background-repeat: no-repeat;
+    height: 400px;
+    left: 20px;
+    margin-top: 20px;
+    position: absolute;
+    width: 400px;
+    z-index: 1
+}
+
+/* chat promo */
+
+.chatshot1 {
+    background-image: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/chat_shot1.png");
+    background-repeat: no-repeat;
+    height: 330px;
+    left: 30px;
+    position: absolute;
+    width: 520px;
+    z-index: 1
+}
+
+.chatshot2 {
+    background-image: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/chat_shot2.png");
+    background-repeat: no-repeat;
+    height: 400px;
+    left: 330px;
+    margin-top: 60px;
+    position: absolute;
+    width: 400px;
+    z-index: 1
+}
+
+/* portability promo */
+
+.portableImage {
+    background-image: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/portable.png");
+    background-repeat: no-repeat;
+    height: 600px;
+    left: 330px;
+    margin-left: 150px;
+    margin-top: 60px;
+    z-index: 1;
+}
+
+.interestExample {
+    font-size: 10pt;
+    font-variant: normal;
+    margin-left: 615px;
+    margin-top: 110px;
+    position: absolute;
+}
+
+.exampleInterestText {
+    font-size: 10pt;
+    font-variant: normal;
+    left: 612px;
+    margin-top: 75px;
+    position: absolute;
+}
+
+.exampleInterestHeader {
+    left: 605px;
+    margin-top: 44px;
+    position: absolute;
+}
+
+.exampleInterestAdd {
+    font-size: 10pt;
+    font-variant: normal;
+	left: 800px;
+    margin-top: 75px;
+    position: absolute;
+}
+
+.exampleInterestSubmit {
+    font-size: 10pt;
+    font-variant: normal;
+    left: 622px;
+    margin-top: 155px;
+    position: absolute;
+}
+
+.LandingPage .QuickSearchForm .FieldGroup {
+	width:auto
+}
+
+.LandingPage .QuickSearchForm .FieldGroup label {
+	width:auto
+}
+
+.LandingPage .QuickSearchForm .body {
+	width:auto;
+	display:inline-block
+}
+
+.LandingPage .QuickSearchForm .footer {
+	width:auto;
+	display:inline-block
+}
+
+.LandingPage .ResultBrowser {
+	background-color:#fff
+}
+
+.LandingPage .nextButton {
+	margin-bottom: 130px !important
+}

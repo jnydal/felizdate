@@ -1,0 +1,9 @@
+.MediaManager .SlideBrowser {
+	padding:15px
+}
+
+.MediaManager .deleteButton {
+	margin-left: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px
+}

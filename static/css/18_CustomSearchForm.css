@@ -1,0 +1,15 @@
+.CustomSearchForm {
+	max-width:900px
+}
+
+.CustomSearchForm .footer {
+	width:100%
+}
+
+.CustomSearchForm > .footer > .SubmitButton {
+
+}
+
+.CustomSearchForm select {
+	width:90%
+}

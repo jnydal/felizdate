@@ -1,0 +1,214 @@
+/*
+* © 2011 D MALAM
+* MIT License
+* Responsly.js Slidy jQuery Plugin
+* Edit as needed
+*/
+
+.slidyContainer {
+	overflow: hidden !important;
+	position: relative !important;
+	margin: 0.5em 0 1em 0 !important;
+  -webkit-border-radius: 4px !important;
+     -moz-border-radius: 4px !important;
+       -o-border-radius: 4px !important;
+          border-radius: 4px !important;
+  -moz-background-clip: padding !important; -webkit-background-clip: padding-box !important; background-clip: padding-box !important;
+
+}
+
+.slidyContainer .slidySlides {
+  margin: auto !important;
+	position: relative !important;
+	left: 0 !important;
+	z-index: 1 !important;
+		overflow: hidden !important;
+		-webkit-transition: all 1500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) !important;
+       -moz-transition: all 1500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) !important;
+         -o-transition: all 1500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) !important;
+            transition: all 1500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) !important; /* ease (default) */
+
+}
+
+/*
+* Next / Previous Buttons
+* Edit url to point to arrow images
+*/
+
+.slidyContainer .movePrev, .slidyContainer .moveNext {
+	position: absolute !important;
+	background: url('../images/arrows.png') !important;
+	width: 33px !important;
+	height: 33px !important;
+	display: inline !important;
+  opacity: 0  !important;
+  -webkit-transition: opacity 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 50ms !important;
+     -moz-transition: opacity 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 50ms !important;
+       -o-transition: opacity 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 50ms !important;
+          transition: opacity 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 50ms !important;
+
+	top: 5% !important;
+	z-index: 10 !important;
+	cursor: pointer !important;
+  -webkit-border-radius: 19px !important;
+     -moz-border-radius: 19px !important;
+       -o-border-radius: 19px !important;
+          border-radius: 19px !important;
+
+  -moz-background-clip: padding !important; -webkit-background-clip: padding-box !important; background-clip: padding-box !important;
+
+    /* -moz-box-shadow: 0px 0px 2em 0.2em #444 !important;
+  -webkit-box-shadow: 0px 0px 2em 0.2em #444 !important;
+          box-shadow: 0px 0px 2em 0.2em #444 !important;*/
+
+}
+
+.slidyContainer .movePrev:hover, .slidyContainer .moveNext:hover {
+    /* -moz-box-shadow: 0px 0px 1em 0.3em #444 !important;
+  -webkit-box-shadow: 0px 0px 1em 0.3em #444 !important;
+          box-shadow: 0px 0px 1em 0.3em #444 !important;*/
+
+}
+
+.slidyContainer .movePrev:hover {
+		background-position: 0px -34px !important;
+}
+
+.slidyContainer .moveNext:hover {
+		background-position: -34px -34px !important;
+}
+
+
+.slidyContainer .movePrev {
+	left: 1% !important;
+}
+
+.slidyContainer .moveNext {
+	right: 1% !important;
+	background-position: -34px 0 !important;
+}
+
+.slidyContainer .movePrev.opaque, .slidyContainer .moveNext.opaque {
+    opacity: 1  !important;
+}
+
+
+/*
+* Slides
+*/
+
+.slidyContainer .slidySlides figure.slidyLeft {
+	left: -100% !important;
+	-webkit-transition: left 2000ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms !important;
+	   -moz-transition: left 2000ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms !important;
+	     -o-transition: left 2000ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms !important;
+	        transition: left 2000ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms !important; /* easeOutQuart */
+
+}
+
+.slidyContainer .slidySlides figure.slidyRight {
+	left: 100% !important;
+	-webkit-transition: left 2000ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms !important;
+	   -moz-transition: left 2000ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms !important;
+	     -o-transition: left 2000ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms !important;
+	        transition: left 2000ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms !important; /* easeOutQuart */
+
+}
+
+.slidyContainer .slidySlides figure.slidyCurrent{
+	position: relative !important;
+	left: 0 !important;
+	z-index: 3 !important;
+	-webkit-transition: left 1500ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 50ms !important;
+	   -moz-transition: left 1500ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 50ms !important;
+	     -o-transition: left 1500ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 50ms !important;
+	        transition: left 1500ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 50ms !important; /* easeOutQuart */
+
+}
+
+.slidyContainer .slidySlides figure.slidyCurrent img{
+  position: static !important;
+  opacity: 1 !important;
+}
+
+.slidyContainer .slidySlides figure {
+	margin: 0 !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 100% !important;
+	height: 100% !important;
+	width: 100% !important;
+	z-index: 2 !important;
+	}
+
+.slidyContainer .slidySlides img {
+  margin: 0 !important;
+	height: auto !important;
+	width: 100% !important;
+	position:absolute !important;
+  -webkit-transition: opacity 1500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 100ms;
+     -moz-transition: opacity 1500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 100ms;
+       -o-transition: opacity 1500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 100ms;
+          transition: opacity 1500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 100ms; /* ease (default) */
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+       -o-border-radius: 4px;
+          border-radius: 4px;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+  opacity: 1;
+
+}
+
+/*
+* Caption
+*/
+
+.slidyContainer .slidySlides figure.slidyCurrent figcaption {
+  opacity: 0.7;
+}
+
+.slidyContainer .slidySlides figcaption {
+  display: inline;
+  float: bottom;
+  position: absolute;
+  bottom: 4px;
+  left: 1%;
+  z-index: 9;
+  padding: 0.2em 0.4em;
+	background-color: #444;
+	color: GhostWhite;
+	font-family: Nobile, Helvetica, Arial, sans-serif;
+  font-size: 1.7em;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  text-shadow:  0px 0px 2px #444;
+
+  -webkit-border-radius: 0.3em;
+     -moz-border-radius: 0.3em;
+       -o-border-radius: 0.3em;
+          border-radius: 0.3em;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+  opacity: 0;
+
+     -moz-box-shadow: 0px 0px 3em 0.2em #444;
+  -webkit-box-shadow: 0px 0px 3em 0.2em #444;
+          box-shadow: 0px 0px 3em 0.2em #444;
+  border: 2px solid GhostWhite;
+  box-shadow: 0.2em 0.1em 0.9em 0 #444;
+
+  -webkit-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 1000ms;
+     -moz-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 1000ms;
+       -o-transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 1000ms;
+          transition: opacity 2000ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 1000ms; /* ease (default) */
+
+}
+
+.slidyContainer .slidySlides figcaption.transparent {
+  opacity: 0 !important;
+  -webkit-transition: opacity 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 50ms;
+     -moz-transition: opacity 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 50ms;
+       -o-transition: opacity 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 50ms;
+          transition: opacity 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000) 50ms;
+}
+

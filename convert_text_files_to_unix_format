@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# all shell scripts
+find . -name "*.sh" -exec fromdos {} \;
+
+# all python scripts
+find . -name "*.py" -exec fromdos {} \;
+
+# all js files
+find static -name "*.js" -exec fromdos {} \;
+
+# all css files
+find static -name "*.css" -exec fromdos {} \;
+
+# all translation texts
+find locale -name "*.po" -exec fromdos {} \;
+
+# all view htmls
+find views -name "*.html" -exec fromdos {} \;

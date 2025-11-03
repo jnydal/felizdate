@@ -1,0 +1,72 @@
+--CREATE OR REPLACE FUNCTION fnsometable_nn(gid integer, geom1 geometry, distguess double precision, n
+--umnn integer)  
+--    RETURNS SETOF sometable AS
+--    $BODY$
+--    SELECT g2.*  
+--        FROM sometable As g2   
+--            WHERE $1 <> g2.gid AND expand($2, $3) && g2.the_geom  
+--        ORDER BY distance(g2.the_geom, $2) LIMIT $4  
+--    $BODY$ LANGUAGE 'sql' VOLATILE;
+
+-- usage:
+-- SELECT g1.gid, g1.description, (fnsometable_nn(g1.gid, g1.the_geom, 300, 5)).gid As nn_gid, 
+--    (fnsometable_nn(g1.gid, g1.the_geom, 300, 5)).description as nn_description, 
+--    distance((fnsometable_nn(g1.gid, g1.the_geom, 300, 5)).the_geom,g1.the_geom) as dist
+--    FROM (SELECT * FROM sometable ORDER BY gid LIMIT 100) g1 
+
+--CREATE TYPE pgis_nn AS
+--   (gid integer, dist numeric(12,5));
+--
+--CREATE OR REPLACE FUNCTION _pgis_fn_nn(geom1 geometry, distguess double precision, numnn integer, maxslices integer, lookupset varchar(150), swhere varchar(5000), sgid2field varchar(100), sgeom2field varchar(100))
+-- RETURNS SETOF pgis_nn AS
+--$BODY$
+--DECLARE
+--    strsql text;
+--    rec pgis_nn;
+--    ncollected integer;
+--    it integer;
+--NOTE: it: the iteration we are currently at 
+--start at the bounding box of the object (expand 0) and move up until it has collected more objects than we need or it = maxslices whichever event happens first
+--BEGIN
+--    ncollected := 0; it := 0;
+--    WHILE ncollected < numnn AND it <= maxslices LOOP
+--        strsql := 'SELECT currentit.' || sgid2field || ', distance(ref.geom, currentit.' || sgeom2field || ') as dist FROM ' || lookupset || '  as currentit, (SELECT geometry(''' || CAST(geom1 As text) || ''') As geom) As ref WHERE ' || swhere || ' AND expand(ref.geom, ' || CAST(distguess*it/maxslices As varchar(100)) ||  ') && currentit.the_geom AND expandoverlap_metric(ref.geom, currentit.the_geom, ' || CAST(distguess As varchar(200)) || ', ' || CAST(maxslices As varchar(200)) || ') = ' || CAST(it As varchar(100)) || ' ORDER BY distance(ref.geom, currentit.the_geom) LIMIT ' || CAST((numnn - ncollected) As varchar(200));
+--        --RAISE NOTICE 'sql: %', strsql;
+--        FOR rec in EXECUTE (strsql) LOOP
+--            IF ncollected < numnn THEN
+--                ncollected := ncollected + 1;
+--                RETURN NEXT rec;
+--            ELSE
+--                EXIT;
+--            END IF;
+--        END LOOP;
+--        it := it + 1;
+--    END LOOP;
+--END
+--$BODY$
+--LANGUAGE 'plpgsql' STABLE;
+--
+-- CREATE OR REPLACE FUNCTION pgis_fn_nn(geom1 geometry, distguess double precision, numnn integer, maxslices integer, lookupset varchar(150), swhere varchar(5000), sgid2field varchar(100), sgeom2field varchar(100))
+--  RETURNS SETOF pgis_nn AS
+--$BODY$
+--    SELECT * FROM _pgis_fn_nn($1,$2, $3, $4, $5, $6, $7, $8);
+--$BODY$
+--  LANGUAGE 'sql' STABLE;
+  
+-- usage:
+-- SELECT g1.gid as gid_ref, (pgis_fn_nn(g1.the_geom, 10000, 5,100,'testpolys', 'gid <> ' || CAST(g1.gid As varchar(30)), 'gid', 'the_geom')).* 
+-- FROM (SELECT * FROM testpolys tp ORDER BY tp.gid LIMIT 500) g1;
+
+-- usage:
+-- select distinct on(cachepositions.gid) cachepositions.* from
+-- (select h.gid, nom_loc, genus, species, h.the_geom, ST_distance(filter.the_geom, h.the_geom) as dist from mexico.oldherbario h,
+-- (select * from mexico.conteo2005 where pobtot > 100) filter
+-- where ST_DWithin(filter.the_geom, h.the_geom, 0.1)
+-- order by h.gid, dist) as cachepositions
+
+-- /////////////////////////////////////////////
+-- PostGIS 2 KNN feature
+--
+-- SELECT ST_Distance(geom, 'SRID=4326;POINT(34.5 -23.2)'::geometry) AS d
+-- FROM mypoints
+-- ORDER BY geom <-> 'SRID=4326;POINT(34.5 -23.2)'::geometry LIMIT 1;

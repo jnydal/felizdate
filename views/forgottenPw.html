@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block headerappendix %}
+<link href="/media/static/dialog.css" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block main_content %}
+
+    <div class="formwidget grid_12" id="forgottenpwform">
+    {% if not mailSent %}
+        <form class="form has-validation" method="post" action="action/forgottenPw/">
+		{% csrf_token %}
+
+            <div class="clearfix">
+
+                <label for="form-email" class="form-label">{% trans "E-mail" %}</label>
+
+                <div class="form-input"><input name="email" type="email" id="form-email" required="required" /></div>
+
+            </div>
+
+            <div class="form-action clearfix">
+
+                <button class="button small lightblue" type="submit" data-icon-primary="ui-icon-circle-check">{% trans "Reset password..." %}</button>
+
+            </div>
+
+        </form>
+       {% else %}
+       		<h3>An e-mail with a reset password link has been sent to {{ email }}</h3>
+       {% endif %}
+        
+    </div>
+
+{% endblock %}
+
+{% block sidebar_content %}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+.DialogWindow {
+    box-shadow: 0 0 16px 4px #333333;
+}
+
+.ui-dialog-content {
+	text-align:left
+}
+
+.CropDialogWindow .jcrop-holder > img {
+	left:0
+}

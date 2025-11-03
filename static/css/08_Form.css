@@ -1,0 +1,191 @@
+.Form input, select, textarea, button, .button, .pagination li a, .toolbar li a {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;    
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box
+}
+
+.Form input[type=checkbox] {
+	margin-top: 3px;
+	margin-right:5px;
+}
+
+.Form textarea {
+    overflow-y: auto;
+	width:100%
+}
+
+.Form input.date,
+.Form input[type=text],
+.Form input[type=password],
+.Form input[type=url],
+.Form input[type=email],
+.Form input[type=date],
+.Form input[type=time],
+.Form select,
+.Form textarea,
+.Form .uploader span.filename {
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 1px 0px rgba(255,255,255,0.2);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 1px 0px rgba(255,255,255,0.2);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1), 0 1px 0px rgba(255,255,255,0.2);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 14px;
+    padding: 4px;
+}
+
+.Form input[type=button],
+.Form input[type=submit],
+.Form input[type=reset],
+.Form button,
+.Form .button,
+.Form .pagination li a,
+.Form .toolbar li a,
+.Form .selector,
+.Form .uploader span.action,
+.Form .checker,
+.Form .radio,
+.Form .paging_full_numbers span.paginate_button,
+.Form .paging_full_numbers span.paginate_active {
+    border: 1px solid #AAA;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 4px 10px;
+}
+
+.Form .lte8 button, .lte8 input[type=button], .lte8 input[type=reset], .lte8 input[type=submit] {
+    overflow: visible;
+    *margin-right: 4px;
+}
+
+.Form .pagination {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.Form .pagination li,
+.Form .paging_full_numbers span.paginate_button,
+.Form .paging_full_numbers span.paginate_active {
+    display: block;
+    float: left;
+    margin-right: 3px;
+}
+
+.Form .pagination li a,
+.Form .paging_full_numbers span.paginate_button,
+.Form .paging_full_numbers span.paginate_active {
+    display: block;
+    padding: 4px 9px;
+}
+
+.Form .pagination li.current a,
+.Form .paging_full_numbers span.paginate_active {
+    background: #FFF;
+    filter: none;
+}
+
+.Form div.formwidget {
+    border: 1px solid #CCC;
+    background-color: #fff;
+    padding: 50px 20px 20px;
+}
+
+.Form input.error, select.error, textarea.error {
+	border-color: red !important
+}
+
+.Form {
+	text-align:left;
+	padding:15px;
+	width:inherit;
+	background-color:#fff
+}
+
+.Form h4 {
+	text-shadow: none;
+}
+
+.Form .body {
+}
+
+.Form .footer {
+    width:inherit;
+    clear:both
+}
+
+.Form .footer .SubmitButton {
+    margin-right:25px
+}
+
+.Form .generalError {
+    color:#FF0000;
+    display:block;
+    font-size:12px;
+    height:20px
+}
+
+.FormSection {
+	width:inherit;
+	clear:both
+}
+
+.FormSection h3 {
+	padding:25px 0px 5px 0px
+}
+
+.Field > em.valid {
+	background-image: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/sprites.png");
+    background-position: -267px -75px;
+	display:inline-block;
+	vertical-align:bottom;
+	width:20px;
+	margin-bottom:1px;
+	margin-left:3px;
+	height:20px
+}
+
+.Form .spinner {
+	float:right;
+	margin-top:3px;
+	margin-left:2px
+}
+
+/* Slider Style */
+
+.SliderField .gutter {
+    margin: 0 10px;
+    width: 380px;
+    display: block;
+    float: left;
+    position: relative;
+}
+
+.SliderField .minLabel {
+	float:left
+}
+
+.SliderField .maxLabel {
+	float:left
+}
+
+.SliderField .knob {
+    background: url("http://dg1h6uvotkrdh.cloudfront.net/s/images/slider_knob.gif") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    width: 20px;
+}
+
+.InterestSection .interestsWrapper {
+	clear:both
+}
