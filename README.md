@@ -1,7 +1,7 @@
-# FelizDate 💘
+# FelizDate 💘 
 
 **FelizDate** is a real-time, full-stack dating platform built for performance, scalability, and responsive user experience.  
-It was developed as a personal project with the ambition to compete with mainstream dating services, featuring instant messaging, geolocation, and a smooth single-page JavaScript interface optimized for both desktop and mobile.
+It was developed as a personal project with the ambition to compete with mainstream dating services, featuring instant messaging, geolocation, and a smooth single-page JavaScript interface optimized for both desktop and mobile. It was built from 2011-2013.
 
 ---
 
