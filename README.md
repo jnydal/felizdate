@@ -1,7 +1,7 @@
 # FelizDate 💘
 
 **FelizDate** is a real-time, full-stack dating platform built for performance, scalability, and responsive user experience.  
-It was developed as a personal project with the ambition to compete with mainstream dating services — featuring instant messaging, geolocation, and a smooth single-page JavaScript interface optimized for both desktop and mobile.
+It was developed as a personal project with the ambition to compete with mainstream dating services, featuring instant messaging, geolocation, and a smooth single-page JavaScript interface optimized for both desktop and mobile.
 
 ---
 
@@ -31,9 +31,9 @@ It was developed as a personal project with the ambition to compete with mainstr
   - `handleErrorResponse(response)`  
   - `handlePushResponse(response)`  
 - Follows an **MVC-like pattern**:
-  - **Controller** – business logic & request handling  
-  - **ObservableModel** – event-based state updates  
-  - **View** – dynamic rendering, dialogs, menus, and profile views  
+  - **Controller**: business logic & request handling  
+  - **ObservableModel**: event-based state updates  
+  - **View**: dynamic rendering, dialogs, menus, and profile views  
 
 **Advantages:**
 - One client codebase across all devices
@@ -104,10 +104,10 @@ Typical production setup includes:
 ## Design Philosophy
 
 FelizDate is engineered for:
-- **Speed** – lightweight client and async communication
-- **Scalability** – horizontally scalable microservice-inspired stack
-- **Simplicity** – JSON-only API and modular architecture
-- **User Experience** – optimized for human interaction and minimal friction
+- **Speed**: lightweight client and async communication
+- **Scalability**: horizontally scalable microservice-inspired stack
+- **Simplicity**: JSON-only API and modular architecture
+- **User Experience**: optimized for human interaction and minimal friction
 
 ---
 
