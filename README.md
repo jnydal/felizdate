@@ -1,26 +1,26 @@
-# FelizDate 💘
+# FelizDate 💘 
 
 **FelizDate** is a real-time, full-stack dating platform built for performance, scalability, and responsive user experience.  
-It was developed as a personal project with the ambition to compete with mainstream dating services — featuring instant messaging, geolocation, and a smooth single-page JavaScript interface optimized for both desktop and mobile.
+It was developed as a personal project with the ambition to compete with mainstream dating services, featuring instant messaging, geolocation, and a smooth single-page JavaScript interface optimized for both desktop and mobile. It was built from 2011-2013.
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
-- 💬 **Real-time chat** with WebSocket integration (like Facebook Messenger)
-- ⚡ **100% JavaScript-based client** for ultra-fast UI updates
-- 📱 **Responsive design** – one unified codebase for desktop, tablet, and mobile
-- ☁️ **Cloud optimized** using Amazon S3 & CloudFront for static and media delivery
-- 👤 **User-friendly profile dialogs** and multi-conversation support in a single browser tab
-- 🗺️ **Geospatial support** (location-based matching)
-- 🌍 **Internationalization (i18n)** and multilingual interface
-- 🔐 **Facebook registration** for quick onboarding
-- 💡 **JSON-based API** for lightweight client-server communication
-- 🧱 **Server stack ready for horizontal scaling**
+- **Real-time chat** with WebSocket integration (like Facebook Messenger)
+- **100% JavaScript-based client** for ultra-fast UI updates
+- **Responsive design** – one unified codebase for desktop, tablet, and mobile
+- **Cloud optimized** using Amazon S3 & CloudFront for static and media delivery
+- **User-friendly profile dialogs** and multi-conversation support in a single browser tab
+- **Geospatial support** (location-based matching)
+- **Internationalization (i18n)** and multilingual interface
+- **Facebook registration** for quick onboarding
+- **JSON-based API** for lightweight client-server communication
+- **Server stack ready for horizontal scaling**
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ### Client-Side
 - Built using **MooTools** and **jQuery** for DOM handling  
@@ -31,9 +31,9 @@ It was developed as a personal project with the ambition to compete with mainstr
   - `handleErrorResponse(response)`  
   - `handlePushResponse(response)`  
 - Follows an **MVC-like pattern**:
-  - **Controller** – business logic & request handling  
-  - **ObservableModel** – event-based state updates  
-  - **View** – dynamic rendering, dialogs, menus, and profile views  
+  - **Controller**: business logic & request handling  
+  - **ObservableModel**: event-based state updates  
+  - **View**: dynamic rendering, dialogs, menus, and profile views  
 
 **Advantages:**
 - One client codebase across all devices
@@ -67,7 +67,7 @@ sendMessage(…)
 
 ---
 
-## ⚙️ Setup Overview
+## Setup Overview
 
 Typical production setup includes:
 
@@ -86,7 +86,7 @@ Typical production setup includes:
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 1. Clone repository:
    ```bash
@@ -101,42 +101,42 @@ Typical production setup includes:
 
 ---
 
-## 🧩 Design Philosophy
+## Design Philosophy
 
 FelizDate is engineered for:
-- **Speed** – lightweight client and async communication
-- **Scalability** – horizontally scalable microservice-inspired stack
-- **Simplicity** – JSON-only API and modular architecture
-- **User Experience** – optimized for human interaction and minimal friction
+- **Speed**: lightweight client and async communication
+- **Scalability**: horizontally scalable microservice-inspired stack
+- **Simplicity**: JSON-only API and modular architecture
+- **User Experience**: optimized for human interaction and minimal friction
 
 ---
 
-## 📸 Screenshots / Demo
+## Screenshots / Demo
 
 You can preview the platform here:  
-👉 [http://www.felizdate.com](http://www.felizdate.com)  
-👉 [http://www.felizdate.no](http://www.felizdate.no)
+ [http://www.felizdate.com](http://www.felizdate.com)   (update: not available anymore)
+ [http://www.felizdate.no](http://www.felizdate.no)   (update: not available anymore)
 
 *(Add screenshots or GIFs such as `felizdate_setup.gif` here.)*
 
 ---
 
-## 👤 Author
+## Author
 
-**Jørund Nydal**  
-📧 [jnydal@gmail.com](mailto:jnydal@gmail.com)  
-🔗 [LinkedIn](http://www.linkedin.com/pub/j%C3%B8rund-nydal/10/485/39a)
+**Thor Jørund Nydal**  
+[jnydal@gmail.com](mailto:jnydal@gmail.com)  
+[LinkedIn](http://www.linkedin.com/pub/j%C3%B8rund-nydal/10/485/39a)
 
 ---
 
-## 🪪 License
+## License
 
 This project is currently proprietary but may be offered for acquisition or licensing.  
 Please contact the author for details.
 
 ---
 
-## 💬 Notes
+## Notes
 
 > FelizDate has been developed independently over nearly two years.  
 > The platform is functional, scalable, and ready for commercial adaptation or sale.
