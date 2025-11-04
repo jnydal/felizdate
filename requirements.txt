@@ -1,0 +1,9 @@
+Django
+Pillow
+boto
+django
+gunicorn
+psycopg2-binary
+python-memcached
+tornado
+# NOTE: The code imports 'from google import translate'. If needed, add a suitable package providing that API.

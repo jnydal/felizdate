@@ -7,7 +7,7 @@ def createSSHClient(server, port, user, password):
     client.connect(server, port, user, password)
     return client
 
-ssh = createSSHClient("www.felizdate.no", 22, "felizdate", "Corrigate9")
+ssh = createSSHClient("www.felizdate.no", 22, "felizdate", os.getenv("SSH_PROD_PASSWORD", "unsafe-default-key"))
 
 # zip application
 for fname in os.listdir('.'):
