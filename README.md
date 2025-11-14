@@ -1,14 +1,14 @@
 # FelizDate 💘 
 
 FelizDate is a real-time, full-stack dating platform built as a personal project to explore performance, scalability, and responsive UI design.
-It features instant messaging, geolocation, and a single-page JavaScript interface optimized for both desktop and mobile. The platform was build between 2011-2013. The frontend uses a custom MVC-based DOM architecture (MooTools/jQuery), conceptually similar to modern React patterns for state-driven UI.
+It features instant messaging, geolocation, and a single-page JavaScript interface optimized for both desktop and mobile. The platform was built between 2011-2013 and now sports a modern **React + TypeScript** frontend (migrated from the original MooTools/jQuery MVC) that mirrors the original data contracts while embracing hooks and Redux Toolkit.
 
 ---
 
 ## Key Features
 
 - **Real-time chat** with WebSocket integration (like Facebook Messenger)
-- **100% JavaScript-based client** for ultra-fast UI updates
+- **Modern TypeScript client** (React 18 + Redux Toolkit + RTK Query) for ultra-fast UI updates
 - **Responsive design** – one unified codebase for desktop, tablet, and mobile
 - **Cloud optimized** using Amazon S3 & CloudFront for static and media delivery
 - **User-friendly profile dialogs** and multi-conversation support in a single browser tab
@@ -23,22 +23,16 @@ It features instant messaging, geolocation, and a single-page JavaScript interfa
 ## System Architecture
 
 ### Client-Side
-- Built using **MooTools** and **jQuery** for DOM handling  
-- Designed as a **single-page app** running on **Apache Cordova** for mobile integration  
-- Handles:
-  - `performAction(request)`  
-  - `handleSuccessResponse(response)`  
-  - `handleErrorResponse(response)`  
-  - `handlePushResponse(response)`  
-- Follows an **MVC-like pattern**:
-  - **Controller**: business logic & request handling  
-  - **ObservableModel**: event-based state updates  
-  - **View**: dynamic rendering, dialogs, menus, and profile views  
+- **React 18 + TypeScript + Vite** SPA with Redux Toolkit for global state and RTK Query for all `/action/*` APIs  
+- Legacy MooTools MVC concepts reimplemented as typed slices: session, messaging, search, geolocation, media, and options  
+- WebSocket hook (`useRealtimeMessages`) mirrors the classic `ServerHandler` push channel for live conversations  
+- Responsive layout components (`TopNav`, `Sidebar`, routed pages) recreate the original UX while enabling modern design systems  
+- ESLint/Prettier, alias-based imports (`@/...`), and environment-driven Vite proxy keep the codebase maintainable and deployable across environments  
 
 **Advantages:**
-- One client codebase across all devices
-- Minimal cross-browser issues
-- Easier maintenance and faster innovation cycles
+- Same backend contract with a future-proof frontend stack
+- Hot-reload DX, testable hooks, and strongly typed data models
+- Easier onboarding for modern JavaScript/TypeScript teams
 
 ---
 
