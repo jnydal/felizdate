@@ -9,7 +9,7 @@ It features instant messaging, geolocation, and a single-page JavaScript interfa
 
 - **Real-time chat** with WebSocket integration (like Facebook Messenger)
 - **Modern TypeScript client** (React 18 + Redux Toolkit + RTK Query) for ultra-fast UI updates
-- **Responsive design** – one unified codebase for desktop, tablet, and mobile
+- **Responsive design** one unified codebase for desktop, tablet, and mobile
 - **Cloud optimized** using Amazon S3 & CloudFront for static and media delivery
 - **User-friendly profile dialogs** and multi-conversation support in a single browser tab
 - **Geospatial support** (location-based matching)
