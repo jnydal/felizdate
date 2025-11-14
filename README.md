@@ -17,6 +17,7 @@ It features instant messaging, geolocation, and a single-page JavaScript interfa
 - **Facebook registration** for quick onboarding
 - **JSON-based API** for lightweight client-server communication
 - **Server stack ready for horizontal scaling**
+- **Containerized dev/prod parity** via Dockerfile + `docker-compose` (PostGIS-backed services out of the box)
 
 ---
 
@@ -92,6 +93,31 @@ Typical production setup includes:
 4. Start backend services (Postgres, Memcached, pgBouncer)
 5. Run Django + Tornado servers behind Nginx/HAProxy
 6. Access the app via `http://localhost` or your domain
+
+### Containerized workflow
+
+For a turnkey local stack you can use the bundled Docker assets:
+
+```bash
+docker compose up --build
+```
+
+This starts:
+
+- `web`: the Django + Tornado hybrid app served by Gunicorn (`http://localhost:8000`)
+- `db`: PostgreSQL + PostGIS (user/db/password all default to `felizdate`)
+
+Environment variables such as `PGHOST`, `MEDIA_ROOT`, and `MEDIA_URL` are wired through `docker-compose.yml`, so you can override them via a `.env` file or CLI flags as needed.
+
+Useful helpers:
+
+```bash
+# Run Django migrations inside the container
+docker compose run --rm web python manage.py migrate
+
+# Create an admin user
+docker compose run --rm web python manage.py createsuperuser
+```
 
 ---
 

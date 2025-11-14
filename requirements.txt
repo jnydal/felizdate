@@ -1,9 +1,8 @@
-Django
+django==5.1.2
 Pillow
 boto
-django
-gunicorn
+gunicorn==21.2.0
 psycopg2-binary
 python-memcached
-tornado
+tornado==6.4.1
 # NOTE: The code imports 'from google import translate'. If needed, add a suitable package providing that API.

@@ -1,0 +1,13 @@
+.git
+.gitignore
+*.pyc
+__pycache__/
+dist/
+build/
+frontend/node_modules/
+node_modules/
+.env
+.env.*
+media/
+postgres_data/
+

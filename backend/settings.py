@@ -1,5 +1,6 @@
 # -*- encoding: UTF-8 -*-
 # Django settings for bototest project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -14,12 +15,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'felizdate',                      # Or path to database file if using sqlite3.
-        'USER': 'django',                      # Not used with sqlite3.
-        'PASSWORD': os.getenv("PG_PASSWORD", "unsafe-default-key"),                  # Not used with sqlite3.
-        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': os.getenv('PGDATABASE', 'felizdate'),
+        'USER': os.getenv('PGUSER', 'django'),
+        'PASSWORD': os.getenv("PGPASSWORD", os.getenv("PG_PASSWORD", "unsafe-default-key")),
+        'HOST': os.getenv('PGHOST', '127.0.0.1'),
+        'PORT': os.getenv('PGPORT', '5432'),
     }
 }
 
@@ -60,12 +61,12 @@ JS_RESPONSE_HEADER = '<script type="text/javascript" src="/static/3rdjs/08_mooto
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = 'C:/users/jny/Dropbox/Utvikling/Eclipse python27 workspace/felizdate/media/'
+MEDIA_ROOT = os.getenv('MEDIA_ROOT', 'C:/users/jny/Dropbox/Utvikling/Eclipse python27 workspace/felizdate/media/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'http://dev.felizdate.com:8080/media/'
+MEDIA_URL = os.getenv('MEDIA_URL', 'http://dev.felizdate.com:8080/media/')
 
 MEDIA_PATH = '/m/'
 
