@@ -39,7 +39,7 @@ It features instant messaging, geolocation, and a single-page JavaScript interfa
 
 ### Server-Side
 - **Frameworks:** Tornado (WebSocket handling) + Django (HTTP/Wsgi + ORM)  
-- **Database:** PostgreSQL 8.4 with PostGIS 2.0 for geolocation  
+- **Database:** PostgreSQL 16 with PostGIS 3.4 for geolocation  
 - **Caching:** Memcached + pgBouncer connection pooling  
 - **Web Server:** Nginx + HAProxy for load balancing  
 - **App Servers:** Gunicorn (9 workers) for main app, plus dedicated chat worker  
