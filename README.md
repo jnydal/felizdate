@@ -68,8 +68,8 @@ Typical production setup includes:
 
 | Component | Version | Purpose |
 |------------|----------|----------|
-| PostgreSQL | 8.4 | Primary database |
-| PostGIS | 16.3.4 | Geolocation data |
+| PostgreSQL | 16.0 | Primary database |
+| PostGIS | 3.4 | Geolocation data |
 | Memcached | — | Caching layer |
 | pgBouncer | — | Connection pooling |
 | Tornado | 6.4.1 | WebSocket handling |
