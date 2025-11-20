@@ -105,12 +105,13 @@ docker compose up --build
 
 This starts:
 
-- `web`: pure Django HTTP stack served by Gunicorn (`http://localhost:8000`)
+- `backend`: Django HTTP stack served by Gunicorn (`http://localhost:8000`)
 - `realtime`: Daphne ASGI service for `/ws/chat/` traffic (`ws://localhost:8080/ws/chat/`)
+- `frontend`: Containerized React SPA served via nginx (`http://localhost:4173`, proxies API/WebSocket traffic to the backend)
 - `db`: PostgreSQL + PostGIS (user/db/password all default to `felizdate`)
 - `redis`: channel layer backing store
 
-Environment variables such as `PGHOST`, `MEDIA_ROOT`, `MEDIA_URL`, `REDIS_HOST`, and `ASYNC_PORT` are wired through `docker-compose.yml`, so you can override them via a `.env` file or CLI flags as needed.
+Environment variables such as `PGHOST`, `MEDIA_ROOT`, `MEDIA_URL`, `REDIS_HOST`, and the frontend build arguments (`VITE_API_BASE_URL`, `VITE_WS_HOST`) are wired through `docker-compose.yml`, so you can override them via a `.env` file or CLI flags as needed. Access the full app at `http://localhost:4173`; API calls and websockets are proxied to the `backend` and `realtime` services automatically.
 
 > **Note:** The default compose file uses the ARM64 PostGIS image. If you're on an x86_64 host, change `postgis/postgis:16-3.4-arm64` to `postgis/postgis:16-3.4`.
 
@@ -118,10 +119,10 @@ Useful helpers:
 
 ```bash
 # Run Django migrations inside the container
-docker compose run --rm web python manage.py migrate
+docker compose run --rm backend python manage.py migrate
 
 # Create an admin user
-docker compose run --rm web python manage.py createsuperuser
+docker compose run --rm backend python manage.py createsuperuser
 ```
 
 ---
