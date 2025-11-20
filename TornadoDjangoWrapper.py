@@ -5,27 +5,32 @@ Created on 30. mai 2012
 @author: jny
 '''
 ############# init parent django project settings
-from django.core.management import setup_environ
-from os import path
-import django.conf
-import django.contrib.auth
-import django.core.handlers.wsgi
-import django.db
-import django.utils.importlib
-import logging
-import felizdate.settings
+import os
 import sys
-import tornado.options
-import tornado.web, tornado.websocket
-sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+import logging
+import importlib
 
-setup_environ(felizdate.settings)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "felizdate.settings")
+
+import django
+from django.conf import settings
+from django.contrib import auth
+from django.contrib.auth import models as auth_models
+from django.core.handlers.wsgi import WSGIRequest
+from django.db import connection
+
+django.setup()
+
+from os import path
+import tornado.options
+import tornado.web, tornado.websocket, tornado.wsgi
+
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 ###############
 
 class DBMixIn(object):
     def dbconnection(self):
-        #if not hasattr(self.application, 'db'):
-        self.application.dbconnection = django.db.connection
+        self.application.dbconnection = connection
         return self.application.dbconnection
 
 class BaseHandler(tornado.web.RequestHandler): # todo: extract django stuff into DjangoHandler
@@ -35,14 +40,14 @@ class BaseHandler(tornado.web.RequestHandler): # todo: extract django stuff into
     def prepare(self):
         super(BaseHandler, self).prepare()
         # Prepare ORM connections
-        django.db.connection.queries = []
+        connection.queries = []
 
     def finish(self, chunk=None):
         super(BaseHandler, self).finish(chunk=chunk)
         # Clean up django ORM connections
-        django.db.connection.close()
-        logging.info('%d sql queries' % len(django.db.connection.queries))
-        for query in django.db.connection.queries:
+        connection.close()
+        logging.info('%d sql queries' % len(connection.queries))
+        for query in connection.queries:
             logging.debug('%s [%s seconds]' % (query['sql'], query['time']))
 
         # Clean up after python-memcached
@@ -52,8 +57,8 @@ class BaseHandler(tornado.web.RequestHandler): # todo: extract django stuff into
 
     def get_django_session(self):
         if not hasattr(self, '_session'):
-            engine = django.utils.importlib.import_module(django.conf.settings.SESSION_ENGINE)
-            session_key = self.get_cookie(django.conf.settings.SESSION_COOKIE_NAME)
+            engine = importlib.import_module(settings.SESSION_ENGINE)
+            session_key = self.get_cookie(settings.SESSION_COOKIE_NAME)
             self._session = engine.SessionStore(session_key)
         return self._session
 
@@ -67,10 +72,12 @@ class BaseHandler(tornado.web.RequestHandler): # todo: extract django stuff into
 
     def get_current_user(self):
         # get_user needs a django request object, but only looks at the session
-        class Dummy(object): pass
+        class Dummy(object):
+            pass
+
         django_request = Dummy()
         django_request.session = self.get_django_session()
-        user = django.contrib.auth.get_user(django_request)
+        user = auth.get_user(django_request)
         if user.is_authenticated():
             return user
         else:
@@ -81,20 +88,19 @@ class BaseHandler(tornado.web.RequestHandler): # todo: extract django stuff into
             if kind != 'Basic':
                 return None
             (username, _, password) = data.decode('base64').partition(':')
-            user = django.contrib.auth.authenticate(username=username,password=password)
+            user = auth.authenticate(username=username,password=password)
             if user is not None and user.is_authenticated():
                 return user
             return None
 
     def get_django_request(self):
-        request = django.core.handlers.wsgi.WSGIRequest(
-          tornado.wsgi.WSGIContainer.environ(self.request))
+        request = WSGIRequest(tornado.wsgi.WSGIContainer.environ(self.request))
         request.session = self.get_django_session()
         
         if self.current_user:
             request.user = self.current_user
         else:
-            request.user = django.contrib.auth.models.AnonymousUser()
+            request.user = auth_models.AnonymousUser()
         
         return request
 
@@ -105,13 +111,13 @@ class WSBaseHandler(tornado.websocket.WebSocketHandler):
     def open(self):
         super(WSBaseHandler, self).open()
         # Prepare ORM connections
-        dbconnection = django.db.connection#self.dbconnection()
+        dbconnection = connection
         dbconnection.queries = []
         pass
 
     def on_close(self):
         # Clean up django ORM connections
-        django.db.connection.close()
+        connection.close()
         # Clean up after python-memcached
         from django.core.cache import cache
         if hasattr(cache, 'close'):
@@ -119,8 +125,8 @@ class WSBaseHandler(tornado.websocket.WebSocketHandler):
 
     def get_django_session(self):
         if not hasattr(self, '_session'):
-            engine = django.utils.importlib.import_module(django.conf.settings.SESSION_ENGINE)
-            session_key = self.get_cookie(django.conf.settings.SESSION_COOKIE_NAME)
+            engine = importlib.import_module(settings.SESSION_ENGINE)
+            session_key = self.get_cookie(settings.SESSION_COOKIE_NAME)
             self._session = engine.SessionStore(session_key)
         return self._session
 
@@ -134,10 +140,12 @@ class WSBaseHandler(tornado.websocket.WebSocketHandler):
 
     def get_current_user(self):
         # get_user needs a django request object, but only looks at the session
-        class Dummy(object): pass
+        class Dummy(object):
+            pass
+
         django_request = Dummy()
         django_request.session = self.get_django_session()
-        user = django.contrib.auth.get_user(django_request)
+        user = auth.get_user(django_request)
         if user.is_authenticated():
             return user
         else:
@@ -148,19 +156,18 @@ class WSBaseHandler(tornado.websocket.WebSocketHandler):
             if kind != 'Basic':
                 return None
             (username, _, password) = data.decode('base64').partition(':')
-            user = django.contrib.auth.authenticate(username=username,password=password)
+            user = auth.authenticate(username=username,password=password)
             if user is not None and user.is_authenticated():
                 return user
             return None
 
     def get_django_request(self):
-        request = django.core.handlers.wsgi.WSGIRequest(
-          tornado.wsgi.WSGIContainer.environ(self.request))
+        request = WSGIRequest(tornado.wsgi.WSGIContainer.environ(self.request))
         request.session = self.get_django_session()
         
         if self.current_user:
             request.user = self.current_user
         else:
-            request.user = django.contrib.auth.models.AnonymousUser()
+            request.user = auth_models.AnonymousUser()
         
         return request

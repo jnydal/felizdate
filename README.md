@@ -9,7 +9,7 @@ It features instant messaging, geolocation, and a single-page JavaScript interfa
 
 - **Real-time chat** with WebSocket integration (like Facebook Messenger)
 - **Modern TypeScript client** (React 18 + Redux Toolkit + RTK Query) for ultra-fast UI updates
-- **Responsive design** one unified codebase for desktop, tablet, and mobile
+- **Responsive design** – one unified codebase for desktop, tablet, and mobile
 - **Cloud optimized** using Amazon S3 & CloudFront for static and media delivery
 - **User-friendly profile dialogs** and multi-conversation support in a single browser tab
 - **Geospatial support** (location-based matching)
@@ -38,11 +38,11 @@ It features instant messaging, geolocation, and a single-page JavaScript interfa
 ---
 
 ### Server-Side
-- **Frameworks:** Tornado (WebSocket handling) + Django (HTTP/Wsgi + ORM)  
+- **Frameworks:** Django (HTTP/Wsgi + ORM) served directly by Gunicorn, with a Channels-powered ASGI service (Daphne) + Redis channel layer for realtime `/ws/chat/` sockets  
 - **Database:** PostgreSQL 16 with PostGIS 3.4 for geolocation  
 - **Caching:** Memcached + pgBouncer connection pooling  
-- **Web Server:** Nginx + HAProxy for load balancing  
-- **App Servers:** Gunicorn (9 workers) for main app, plus dedicated chat worker  
+- **Web Server:** Nginx + HAProxy for load balancing / path-based routing (`/async` traffic → Tornado, everything else → Django)  
+- **App Servers:** Gunicorn (HTTP) + dedicated Tornado worker for push  
 - **CDN & Storage:** Amazon S3 + CloudFront  
 
 **Server endpoints (simplified):**
@@ -72,9 +72,10 @@ Typical production setup includes:
 | PostGIS | 3.4 | Geolocation data |
 | Memcached | — | Caching layer |
 | pgBouncer | — | Connection pooling |
-| Tornado | 6.4.1 | WebSocket handling |
+| Channels (Daphne) | 4.1 | WebSocket service (ASGI) |
+| Redis | 7.x | Channel layer / pub-sub |
 | Django | 5.1.2 | Web framework & ORM |
-| Gunicorn | 21.2.0 | Application server |
+| Gunicorn | 21.2.0 | Django HTTP application server |
 | HAProxy | 1.4 | Load balancing |
 | Nginx | — | Static proxy / reverse proxy |
 | Amazon S3 & CloudFront | — | CDN & media hosting |
@@ -104,10 +105,14 @@ docker compose up --build
 
 This starts:
 
-- `web`: the Django + Tornado hybrid app served by Gunicorn (`http://localhost:8000`)
+- `web`: pure Django HTTP stack served by Gunicorn (`http://localhost:8000`)
+- `realtime`: Daphne ASGI service for `/ws/chat/` traffic (`ws://localhost:8080/ws/chat/`)
 - `db`: PostgreSQL + PostGIS (user/db/password all default to `felizdate`)
+- `redis`: channel layer backing store
 
-Environment variables such as `PGHOST`, `MEDIA_ROOT`, and `MEDIA_URL` are wired through `docker-compose.yml`, so you can override them via a `.env` file or CLI flags as needed.
+Environment variables such as `PGHOST`, `MEDIA_ROOT`, `MEDIA_URL`, `REDIS_HOST`, and `ASYNC_PORT` are wired through `docker-compose.yml`, so you can override them via a `.env` file or CLI flags as needed.
+
+> **Note:** The default compose file uses the ARM64 PostGIS image. If you're on an x86_64 host, change `postgis/postgis:16-3.4-arm64` to `postgis/postgis:16-3.4`.
 
 Useful helpers:
 

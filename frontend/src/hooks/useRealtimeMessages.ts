@@ -7,7 +7,7 @@ import type { MessageEnvelope } from '@/types/api';
 const buildSocketUrl = () => {
   const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
   const host = import.meta.env.VITE_WS_HOST ?? window.location.host;
-  const path = import.meta.env.VITE_WS_PATH ?? '/socket';
+  const path = import.meta.env.VITE_WS_PATH ?? '/ws/chat/';
   return `${protocol}://${host}${path}`;
 };
 

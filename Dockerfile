@@ -25,5 +25,5 @@ ENV DJANGO_SETTINGS_MODULE=felizdate.settings \
 
 EXPOSE 8000
 
-CMD ["gunicorn", "runserver:application", "--bind", "0.0.0.0:8000", "--workers", "2", "--worker-class", "egg:gunicorn#tornado"]
+CMD ["gunicorn", "felizdate.wsgi:application", "-c", "gunicorn_web.py"]
 

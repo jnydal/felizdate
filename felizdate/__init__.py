@@ -1,0 +1,2 @@
+# FelizDate Django compatibility package
+

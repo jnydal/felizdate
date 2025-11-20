@@ -2,6 +2,8 @@
 # Django settings for bototest project.
 import os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -130,19 +132,46 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'felizdate.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-#WSGI_APPLICATION = 'felizdate.wsgi.application'
+WSGI_APPLICATION = 'felizdate.wsgi.application'
+ASGI_APPLICATION = 'felizdate.asgi.application'
 
+DEFAULT_TEMPLATE_DIR = os.path.join(BASE_DIR, '../views')
 TEMPLATE_DIRS = (
-    'C:/users/jny/Dropbox/Utvikling/Eclipse python27 workspace/felizdate/views/'
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.getenv('DJANGO_TEMPLATE_DIR', DEFAULT_TEMPLATE_DIR),
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    "django.core.context_processors.i18n",
+    "django.template.context_processors.i18n",
 )
 
+TEMPLATES = [
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": list(TEMPLATE_DIRS),
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.i18n",
+            ],
+        },
+    },
+]
+
+REDIS_HOST = os.getenv("REDIS_HOST", "redis")
+REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [(REDIS_HOST, REDIS_PORT)],
+        },
+    },
+}
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -150,6 +179,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
     # Uncomment the next line to enable the admin:
     #'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

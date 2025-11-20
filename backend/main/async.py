@@ -6,7 +6,7 @@ Created on 28. des. 2011
 
 @author: J. Nydal
 '''
-from django.utils.translation import ugettext
+from django.utils.translation import gettext as _
 from exceptions import AppException
 from models import Worker, UserProfile
 import logging
@@ -52,8 +52,8 @@ def subscriberFunction():
             try:
                 if asyncSession:
                     asyncSession.addMessage(message)
-            except Exception, e:
-                pass
+            except Exception as e:
+                logger.debug("Failed to deliver async message: %s", e)
         except zmq.ZMQError as e:#@UndefinedVariable
             if e.errno == zmq.ETERM: #@UndefinedVariable
                 break           # Interrupted
@@ -100,7 +100,7 @@ class AsyncSession(object) :
         
         for v in AsyncSession.ASYNC_SESSIONS.values() :
             if v.profileId == profileId :
-                raise AppException(ugettext("In use"))
+                raise AppException(_("In use"))
         self.profileId = profileId
         AsyncSession.CUR_ID += 1
         self.id   = AsyncSession.CUR_ID 
@@ -117,7 +117,7 @@ class AsyncSession(object) :
             else:
                 # session not found on at current worker. Broadcast.
                 AsyncSession.PUBLISHER.send(str(message))
-        except Exception, e:
+        except Exception as e:
             logger.debug(e)
     
     """
@@ -197,7 +197,7 @@ def remove(request) :
 
     session = AsyncSession.get(thisUserProfile.id)
     if not session :
-        return JSONErrorResponse(ugettext('session expired'))
+        return JSONErrorResponse(_('session expired'))
 
     AsyncSession.remove(thisUserProfile.id)
     
@@ -212,7 +212,7 @@ class LongpollHandler(TornadoDjangoWrapper.BaseHandler, mixin.DataMixin):
     def get(self):
         since = self.get_argument("since")
         if not since:
-            return JSONErrorResponse(ugettext('Must supply since parameter'))
+            return JSONErrorResponse(_('Must supply since parameter'))
     
         thisUserProfile = getLoggedInProfile(self.current_user)
         if thisUserProfile != None:
@@ -250,11 +250,11 @@ class WebSocketHandler(TornadoDjangoWrapper.WSBaseHandler):
         toUserProfileId = int(messageDict['toProfileId'])
         toUserProfile = UserProfile.objects.get(id=toUserProfileId)
         if not toUserProfile:
-            return JSONErrorResponse(ugettext("Profile does not exist."))
+            return JSONErrorResponse(_("Profile does not exist."))
         
         fromUserProfile = getLoggedInProfile(self.current_user)  
         if fromUserProfile in toUserProfile.blockedProfiles.all():
-            return JSONErrorResponse(ugettext("Message cannot be delivered to recipient for the moment."))
+            return JSONErrorResponse(_("Message cannot be delivered to recipient for the moment."))
         messageText = messageDict['message']    
     
         timestamp = int(round(time.time()))

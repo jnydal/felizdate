@@ -33,6 +33,7 @@ from activity import ActivityManager
 import time, logging
 from felizdate.main.constants import UserType
 import urllib
+from realtime import dispatch_chat_message
 
 DUPLICATE_KEY_ERROR = 1062
 PROFILES_PR_SEARCH_RESULT = 21
@@ -188,11 +189,10 @@ def sendMessageJSONAction(request):
     # save message
     Message(toProfile=toUserProfile, fromProfile=fromUserProfile, message=messageText, timestamp=timestamp).save()
     
-    if push == True:
-        # try to send asynchronously
-        sent = AsyncSession.send(message, toUserProfileId)
-        if sent != True:
-            sendEmail(message, request)
+    dispatched = dispatch_chat_message(toUserProfileId, message)
+    
+    if push == True and not dispatched:
+        sendEmail(message, request)
     
     return JSONSuccessResponse([message])
 
