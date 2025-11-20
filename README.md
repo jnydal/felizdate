@@ -39,7 +39,7 @@ It features instant messaging, geolocation, and a single-page JavaScript interfa
 
 ### Server-Side
 - **Frameworks:** Tornado (WebSocket handling) + Django (HTTP/Wsgi + ORM)  
-- **Database:** PostgreSQL 8.4 with PostGIS 2.0 for geolocation  
+- **Database:** PostgreSQL 16 with PostGIS 3.4 for geolocation  
 - **Caching:** Memcached + pgBouncer connection pooling  
 - **Web Server:** Nginx + HAProxy for load balancing  
 - **App Servers:** Gunicorn (9 workers) for main app, plus dedicated chat worker  
@@ -68,13 +68,13 @@ Typical production setup includes:
 
 | Component | Version | Purpose |
 |------------|----------|----------|
-| PostgreSQL | 8.4 | Primary database |
-| PostGIS | 2.0 | Geolocation data |
+| PostgreSQL | 16.0 | Primary database |
+| PostGIS | 3.4 | Geolocation data |
 | Memcached | — | Caching layer |
 | pgBouncer | — | Connection pooling |
-| Tornado | 2.4 | WebSocket handling |
-| Django | 1.4 | Web framework & ORM |
-| Gunicorn | — | Application server |
+| Tornado | 6.4.1 | WebSocket handling |
+| Django | 5.1.2 | Web framework & ORM |
+| Gunicorn | 21.2.0 | Application server |
 | HAProxy | 1.4 | Load balancing |
 | Nginx | — | Static proxy / reverse proxy |
 | Amazon S3 & CloudFront | — | CDN & media hosting |
