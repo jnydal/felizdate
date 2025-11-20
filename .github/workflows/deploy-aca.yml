@@ -1,0 +1,94 @@
+name: CD to Azure Container Apps - felizdate
+
+on:
+  push:
+    branches: [ main ]   # change if your main branch is different
+
+env:
+  # ---- CHANGE THESE VALUES ----
+  AZURE_CONTAINER_REGISTRY: myregistry.azurecr.io     # full ACR login server
+  ACR_NAME: myregistry                                # ACR name without .azurecr.io
+  IMAGE_NAME: felizdate-web                           # ACR repo name for this app
+
+  AZURE_RESOURCE_GROUP: rg-felizdate                  # resource group
+  AZURE_CONTAINERAPPS_ENVIRONMENT: felizdate-env      # Container Apps env
+  AZURE_LOCATION: norwayeast                          # region, e.g. norwayeast / westeurope
+  CONTAINERAPP_NAME: felizdate                        # Container App name
+
+  # Internal app port from your Dockerfile (gunicorn binds to 8000)
+  APP_PORT: "8000"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Login to Azure
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Login to ACR
+      - name: Azure CLI - login to ACR
+        run: |
+          az acr login --name $ACR_NAME
+
+      # Build & push backend image (Dockerfile at repo root)
+      - name: Build and push image
+        run: |
+          IMAGE_TAG=${GITHUB_SHA}
+          FULL_IMAGE="$AZURE_CONTAINER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG"
+          LATEST_IMAGE="$AZURE_CONTAINER_REGISTRY/$IMAGE_NAME:latest"
+
+          echo "Building image: $FULL_IMAGE"
+          docker build -t "$FULL_IMAGE" -t "$LATEST_IMAGE" .
+
+          echo "Pushing image to ACR..."
+          docker push "$FULL_IMAGE"
+          docker push "$LATEST_IMAGE"
+
+          echo "IMAGE=$LATEST_IMAGE" >> $GITHUB_ENV
+
+      # Ensure resource group exists
+      - name: Ensure resource group
+        run: |
+          az group show --name "$AZURE_RESOURCE_GROUP" >/dev/null 2>&1 || \
+          az group create --name "$AZURE_RESOURCE_GROUP" --location "$AZURE_LOCATION"
+
+      # Ensure Container Apps environment exists
+      - name: Ensure Container Apps environment
+        run: |
+          az containerapp env show \
+            --name "$AZURE_CONTAINERAPPS_ENVIRONMENT" \
+            --resource-group "$AZURE_RESOURCE_GROUP" >/dev/null 2>&1 || \
+          az containerapp env create \
+            --name "$AZURE_CONTAINERAPPS_ENVIRONMENT" \
+            --resource-group "$AZURE_RESOURCE_GROUP" \
+            --location "$AZURE_LOCATION"
+
+      # Deploy / update the Container App
+      - name: Deploy to Azure Container Apps
+        run: |
+          az containerapp up \
+            --name "$CONTAINERAPP_NAME" \
+            --resource-group "$AZURE_RESOURCE_GROUP" \
+            --environment "$AZURE_CONTAINERAPPS_ENVIRONMENT" \
+            --image "$IMAGE" \
+            --ingress external \
+            --target-port "$APP_PORT" \
+            --location "$AZURE_LOCATION" \
+            --runtime container \
+            --registry-server "$AZURE_CONTAINER_REGISTRY" \
+            --env-vars \
+              DJANGO_SETTINGS_MODULE=felizdate.settings \
+              PYTHONPATH=/app \
+              MEDIA_ROOT=/app/media \
+              PGHOST=${{ secrets.PGHOST }} \
+              PGPORT=${{ secrets.PGPORT }} \
+              PGDATABASE=${{ secrets.PGDATABASE }} \
+              PGUSER=${{ secrets.PGUSER }} \
+              PGPASSWORD=${{ secrets.PGPASSWORD }}
