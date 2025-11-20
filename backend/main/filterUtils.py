@@ -5,12 +5,12 @@ Created on 8. Oct. 2011
 @author: jny
 """
 from datetime import datetime
-from profileUtils import getAge
+from .profileUtils import getAge
 from django.conf import settings
 from django.contrib.gis.measure import D
-from models import UserProfile, EducationalDegree, Interest
-from constants import Status
-from activity import ActivityManager
+from .models import UserProfile, EducationalDegree, Interest
+from .constants import Status
+from .activity import ActivityManager
 
 def getBirthYear(age):
     age = int(age)

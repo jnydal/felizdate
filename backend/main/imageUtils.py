@@ -8,7 +8,7 @@ Created on 1. mai 2011
 @author: jny
 
 '''
-from cStringIO import StringIO
+from io import BytesIO
 from os.path import splitext
 from datetime import date
 from django.core.files.base import ContentFile
@@ -33,7 +33,7 @@ def storeProfileImageDraft(imageFile):
     width, height = image.size
     
     # create file buffer, and save image as png.
-    fileBuffer = StringIO()
+    fileBuffer = BytesIO()
     image.save(fileBuffer, settings.DEFAULT_IMAGE_FORMAT)
     rawData = fileBuffer.getvalue()
     
@@ -82,17 +82,17 @@ def getCroppedAndResizedTemporaryImagePathFiles(temporaryImagePathFile, x, y, w,
     image = image.resize((wsize,settings.DEFAULT_PROFILE_IMAGE_HEIGHT), Image.ANTIALIAS)
     
     # create file buffer, and save micro as png.
-    fileBufferMicro = StringIO()
+    fileBufferMicro = BytesIO()
     micro.save(fileBufferMicro, settings.DEFAULT_IMAGE_FORMAT)
     rawDataMicro = fileBufferMicro.getvalue()
     
     # create file buffer, and save tumbnail as png.
-    fileBufferTumb = StringIO()
+    fileBufferTumb = BytesIO()
     thumbnail.save(fileBufferTumb, settings.DEFAULT_IMAGE_FORMAT)
     rawDataTumb = fileBufferTumb.getvalue()
     
     # create file buffer, and save image as png.
-    fileBuffer = StringIO()
+    fileBuffer = BytesIO()
     image.save(fileBuffer, settings.DEFAULT_IMAGE_FORMAT)
     rawData = fileBuffer.getvalue()
     
@@ -147,13 +147,13 @@ def getProfileImageSet(pathFilename,x,y,w,h):
     image = image.resize((wsize,settings.DEFAULT_PROFILE_IMAGE_HEIGHT), Image.ANTIALIAS)
     
     # create file buffer and convert thumbnail to png.
-    buffer = StringIO()
+    buffer = BytesIO()
     thumbnail.save(buffer, settings.DEFAULT_IMAGE_FORMAT)
     thumbnaildata = buffer.getvalue()
     buffer.close()
     
     # create file buffer and convert image to png.
-    buffer = StringIO()
+    buffer = BytesIO()
     image.save(buffer, settings.DEFAULT_IMAGE_FORMAT)
     imagedata = buffer.getvalue()
     buffer.close()

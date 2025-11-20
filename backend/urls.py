@@ -1,84 +1,75 @@
 # -*- encoding: UTF-8 -*-
 from django.conf import settings
-from django.conf.urls import patterns, include, url
-from django.contrib import admin
+from django.urls import path, re_path
+from django.views.static import serve
+from django.views.i18n import JavaScriptCatalog
+from django.contrib.auth import views as auth_views
 
-# Uncomment the next two lines to enable the admin:
-admin.autodiscover()
+from backend.main import ajaxActions, actions, appAdmin
 
-js_info_dict = {
-    'packages': ('felizdate',),
-}
+js_info_dict = {'packages': ('felizdate',)}
 
-urlpatterns = patterns('',
-    
-    # i18n js provider
-    (r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),
-    
-    # entry for dev server
-    url(r'^signup/$', 'felizdate.main.actions.signupPageAction'),
-    url(r'^registrer/$', 'felizdate.main.actions.signupPageAction'),
-    
-    # session
-    url(r'^action/getUserSession/$', 'felizdate.main.ajaxActions.getUserSessionJSONAction'),
-    
-    # account
-    url(r'^action/getLatestMessages/$', 'felizdate.main.ajaxActions.getLatestMessagesJSONAction'),
-    
-    # profile
-    url(r'^action/setStatus/$', 'felizdate.main.ajaxActions.setStatusJSONAction'),
-    url(r'^action/setPosition/$', 'felizdate.main.ajaxActions.setPositionJSONAction'),
-    url(r'^action/getProfile/$', 'felizdate.main.ajaxActions.getProfileJSONAction'),
-    url(r'^action/getOptions/$', 'felizdate.main.ajaxActions.getOptionsJSONAction'),
-    url(r'^action/getInterests/$', 'felizdate.main.ajaxActions.getInterestSuggestionsJSONAction'),
-    url(r'^action/saveInterest/$', 'felizdate.main.ajaxActions.saveInterestJSONAction'),
-    url(r'^action/getCloseByProfiles/$', 'felizdate.main.ajaxActions.getCloseByProfilesJSONAction'),
-    url(r'^action/toggleBlock/$', 'felizdate.main.ajaxActions.toggleBlockJSONAction'),
+urlpatterns = [
+    path('jsi18n/', JavaScriptCatalog.as_view(**js_info_dict)),
+    path('signup/', actions.signupPageAction),
+    path('registrer/', actions.signupPageAction),
 
-    # messages
-    url(r'^action/getMessages/$', 'felizdate.main.ajaxActions.getMessagesJSONAction'),
-    url(r'^action/sendMessage/$', 'felizdate.main.ajaxActions.sendMessageJSONAction'),
-    
-    # search
-    url(r'^action/searchProfiles/$', 'felizdate.main.ajaxActions.searchProfilesJSONAction'),
-    url(r'^action/quickSearch/$', 'felizdate.main.ajaxActions.quickSearchJSONAction'),
-    url(r'^action/getBestMatches/$', 'felizdate.main.ajaxActions.getBestMatchesJSONAction'),
-    url(r'^action/getConversation/$', 'felizdate.main.ajaxActions.getConversationJSONAction'),
-    
-    # register
-    url(r'^action/saveAccount/$', 'felizdate.main.ajaxActions.saveAccountJSONAction'),
-    url(r'^action/uploadImageDraft/$', 'felizdate.main.ajaxActions.uploadImageDraftJSONAction'),
-    url(r'^action/uploadMedia/$', 'felizdate.main.ajaxActions.uploadMediaJSONAction'),
-    url(r'^action/deleteMedia/$', 'felizdate.main.ajaxActions.deleteMediaJSONAction'),
-    url(r'^action/cropImage/$', 'felizdate.main.ajaxActions.cropImageJSONAction'),
-    url(r'^action/saveProfile/$', 'felizdate.main.ajaxActions.saveProfileJSONAction'),
-    url(r'^action/saveAdvanced/$', 'felizdate.main.ajaxActions.saveAdvancedJSONAction'),
-    
-    # report
-    url(r'^action/reportIssue/$', 'felizdate.main.ajaxActions.reportIssueJSONAction'),
+    path('action/getUserSession/', ajaxActions.getUserSessionJSONAction),
+    path('action/getLatestMessages/', ajaxActions.getLatestMessagesJSONAction),
+    path('action/setStatus/', ajaxActions.setStatusJSONAction),
+    path('action/setPosition/', ajaxActions.setPositionJSONAction),
+    path('action/getProfile/', ajaxActions.getProfileJSONAction),
+    path('action/getOptions/', ajaxActions.getOptionsJSONAction),
+    path('action/getInterests/', ajaxActions.getInterestSuggestionsJSONAction),
+    path('action/saveInterest/', ajaxActions.saveInterestJSONAction),
+    path('action/getCloseByProfiles/', ajaxActions.getCloseByProfilesJSONAction),
+    path('action/toggleBlock/', ajaxActions.toggleBlockJSONAction),
 
-    # login
-    url(r'^action/login/$', 'felizdate.main.ajaxActions.loginJSONAction'),
-    
-    # logout
-    url(r'^action/logout/$', 'felizdate.main.ajaxActions.logoutJSONAction'),
-    
-    url(r'^action/getCities/$', 'felizdate.main.ajaxActions.getCitiesJSONAction'),
+    path('action/getMessages/', ajaxActions.getMessagesJSONAction),
+    path('action/sendMessage/', ajaxActions.sendMessageJSONAction),
+    path('action/searchProfiles/', ajaxActions.searchProfilesJSONAction),
+    path('action/quickSearch/', ajaxActions.quickSearchJSONAction),
+    path('action/getBestMatches/', ajaxActions.getBestMatchesJSONAction),
+    path('action/getConversation/', ajaxActions.getConversationJSONAction),
 
-    # reset password
-    url(r'^action/passwordReset/$','django.contrib.auth.views.password_reset',{'template_name': 'resetPasswordForm.html','email_template_name': 'resetPasswordEmail.html'}),
-    url(r'^action/passwordReset/done/$','django.contrib.auth.views.password_reset_done',{'template_name': 'resetPasswordDone.html'}),
-    url(r'^action/reset/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$','django.contrib.auth.views.password_reset_confirm', {'template_name': 'resetPasswordConfirm.html'}),
-    url(r'^action/reset/done/$', 'django.contrib.auth.views.password_reset_complete', {'template_name': 'resetPasswordComplete.html'}),
-    
-    # app admin
-    url(r'^appadmin/$', 'felizdate.main.appAdmin.showAdminPageAction'),
-    url(r'^appadmin/acceptPendingProfileImages$', 'felizdate.main.appAdmin.acceptProfileImagesAction'),
-    url(r'^appadmin/rejectPendingProfileImages$', 'felizdate.main.appAdmin.rejectProfileImagesAction'),
-    
-    # temp media root
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, }),
-    
-    # temp static root
-    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, }),
-)
+    path('action/saveAccount/', ajaxActions.saveAccountJSONAction),
+    path('action/uploadImageDraft/', ajaxActions.uploadImageDraftJSONAction),
+    path('action/uploadMedia/', ajaxActions.uploadMediaJSONAction),
+    path('action/deleteMedia/', ajaxActions.deleteMediaJSONAction),
+    path('action/cropImage/', ajaxActions.cropImageJSONAction),
+    path('action/saveProfile/', ajaxActions.saveProfileJSONAction),
+    path('action/saveAdvanced/', ajaxActions.saveAdvancedJSONAction),
+
+    path('action/reportIssue/', ajaxActions.reportIssueJSONAction),
+    path('action/login/', ajaxActions.loginJSONAction),
+    path('action/logout/', ajaxActions.logoutJSONAction),
+    path('action/getCities/', ajaxActions.getCitiesJSONAction),
+
+    path(
+        'action/passwordReset/',
+        auth_views.PasswordResetView.as_view(
+            template_name='resetPasswordForm.html',
+            email_template_name='resetPasswordEmail.html',
+        ),
+    ),
+    path(
+        'action/passwordReset/done/',
+        auth_views.PasswordResetDoneView.as_view(template_name='resetPasswordDone.html'),
+    ),
+    re_path(
+        r'action/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$',
+        auth_views.PasswordResetConfirmView.as_view(template_name='resetPasswordConfirm.html'),
+    ),
+    path(
+        'action/reset/done/',
+        auth_views.PasswordResetCompleteView.as_view(template_name='resetPasswordComplete.html'),
+    ),
+
+    path('appadmin/', appAdmin.showAdminPageAction),
+    path('appadmin/acceptPendingProfileImages', appAdmin.acceptPendingProfileImagesAction),
+    path('appadmin/rejectPendingProfileImages', appAdmin.rejectPendingProfileImagesAction),
+
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+]
+

@@ -15,24 +15,23 @@ from django.core.paginator import Paginator
 from django.db import IntegrityError
 from django.utils.translation import gettext as _
 from django.core.files import File
-from exceptions import AppException
-from constants import Status, MembershipType, Skin, Sound
-from filterUtils import getFilteredProfiles, getBestMatches, getGeoMatches, getBirthYear
-from forms import RegisterAccountForm, SearchProfilesForm
-from handlerUtils import runJavascript, getLoggedInUserProfile, JSONSuccessResponse, JSONErrorResponse, JSONFieldErrorResponse, storeTemporaryMediaFile, validateMedia, getLanguageCode
-from imageUtils import getCroppedAndResizedTemporaryImagePathFiles, storeProfileImageDraft, getAndRemoveTemporaryFile
-from interestUtil import saveInterest, getInterestSuggestions
-from messageUtils import getConversation, getLatestMessages, sendEmail
-from models import UserProfile, City, Message, CustomUser, Membership, Media, getIPCity, Country
-from modelUtils import getFirst
-from profileUtils import saveProfile, saveAdvanced, getFieldOptions, getProfileDict
+from .exceptions import AppException
+from .constants import Status, MembershipType, Skin, Sound, UserType
+from .filterUtils import getFilteredProfiles, getBestMatches, getGeoMatches, getBirthYear
+from .forms import RegisterAccountForm, SearchProfilesForm
+from .handlerUtils import runJavascript, getLoggedInUserProfile, JSONSuccessResponse, JSONErrorResponse, JSONFieldErrorResponse, storeTemporaryMediaFile, validateMedia, getLanguageCode
+from .imageUtils import getCroppedAndResizedTemporaryImagePathFiles, storeProfileImageDraft, getAndRemoveTemporaryFile
+from .interestUtil import saveInterest, getInterestSuggestions
+from .messageUtils import getConversation, getLatestMessages, sendEmail
+from .models import UserProfile, City, Message, CustomUser, Membership, Media, getIPCity, Country
+from .modelUtils import getFirst
+from .profileUtils import saveProfile, saveAdvanced, getFieldOptions, getProfileDict
 from django.core.mail import send_mail
 from django.conf import settings
-from activity import ActivityManager
+from .activity import ActivityManager
 import time, logging
-from felizdate.main.constants import UserType
 import urllib
-from realtime import dispatch_chat_message
+from .realtime import dispatch_chat_message
 
 ugettext = _
 
@@ -61,7 +60,7 @@ def setStatusJSONAction(request):
             profile = getLoggedInUserProfile(request)
             profile.status = status
             profile.save()
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
     return JSONSuccessResponse(status)
 
@@ -72,7 +71,7 @@ def logoutJSONAction(request):
             ActivityManager.remove(userprofile)
         logout(request)
         return JSONSuccessResponse()
-    except Exception, e:
+    except Exception as e:
         return JSONErrorResponse(e)
                 
 def reportIssueJSONAction(request):
@@ -85,7 +84,7 @@ def reportIssueJSONAction(request):
             description = request.POST['description']
             profile = getLoggedInUserProfile(request)
             send_mail("".join([type, " report"]), "".join(["Userprofile ", profile.profilename, " would like to report the following ", type, ":\n\n",description]), profile.coreuser.email, [email], fail_silently=False)
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
     return JSONSuccessResponse()
 
@@ -107,7 +106,7 @@ def getUserSessionJSONAction(request):
             profiledata = getProfileDict(userprofile)
             result.update(profiledata)
             return JSONSuccessResponse(result)
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
     else:
         return JSONSuccessResponse({ "csrfToken": request.META['CSRF_COOKIE'], "domestic" : domestic })
@@ -123,7 +122,7 @@ def setPositionJSONAction(request):
                     profile.last_position = fromstr("POINT(%s %s)" % (longitude, latitude))
                     profile.save()
                     return JSONSuccessResponse({"longitude": longitude, "latitude": latitude})
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
                 
 def getOptionsJSONAction(request):
@@ -133,7 +132,7 @@ def getOptionsJSONAction(request):
     if request.method == 'GET':
         try:
             return JSONSuccessResponse(getFieldOptions(getLanguageCode(request)))
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
         
 def getProfileJSONAction(request):
@@ -149,7 +148,7 @@ def getProfileJSONAction(request):
             if profile in userprofile.blockedProfiles.all():
                 result['profile'].update({"blocked": True})
             return JSONSuccessResponse(result)
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e.message)
 
 def toggleBlockJSONAction(request):
@@ -166,7 +165,7 @@ def toggleBlockJSONAction(request):
                 result.update({"blocked": True})
             userprofile.save()
             return JSONSuccessResponse(result)
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e.message)
 
 def sendMessageJSONAction(request):
@@ -212,7 +211,8 @@ def uploadImageDraftJSONAction(request):
             resizedImageDraftPath, pathFilename, width, height = storeProfileImageDraft(imageFile)
             script = 'parent.application.controller.handleSuccessResponse(new ServerResponse(new ActionRequest("uploadImageDraft", {}), { resizedImageDraftPath: "'+ settings.TEMP_MEDIA_URL + resizedImageDraftPath +'", pathfilename: "' + pathFilename + '", width: "' + str(width) + '", height: "' + str(height) + '", sourceName: "' + str(sourceName) + '"}));'
             return runJavascript(script)
-        except Exception as (errno, strerror):
+        except Exception as err:
+            errno, strerror = err.args if isinstance(err, tuple) else (None, str(err))
             return runJavascript('parent.application.view.showErrorDialog("'+ strerror +'");')
 
 def uploadMediaJSONAction(request):
@@ -232,12 +232,12 @@ def uploadMediaJSONAction(request):
             media.save()
             script = 'parent.application.controller.handleSuccessResponse(new ServerResponse(new ActionRequest("uploadMedia", {}), { id: "' + str(media.id) + '", type: "' + str(media.mediatype) + '", name: "' + request.FILES['media'].name + '", url: "' + media.raw.url + '", sourceName: "' + str(sourceName) + '"}));'
             return runJavascript(script)
-        except ValueError, e:
-            return runJavascript('parent.application.view.showErrorDialog("'+ e +'");')
-        except AppException, e:
+        except ValueError as e:
+            return runJavascript('parent.application.view.showErrorDialog("'+ str(e) +'");')
+        except AppException as e:
             return runJavascript('parent.application.view.showErrorDialog("'+ e.value +'");')
-        except Exception as (errno, strerror):
-            return runJavascript('parent.application.view.showErrorDialog("'+ strerror +'");')
+        except Exception as err:
+            return runJavascript('parent.application.view.showErrorDialog("'+ str(err) +'");')
 
 def deleteMediaJSONAction(request):
     '''
@@ -251,7 +251,7 @@ def deleteMediaJSONAction(request):
             media.deleteData()
             media.delete()
             return JSONSuccessResponse()
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
 
 def cropImageJSONAction(request):
@@ -273,7 +273,7 @@ def cropImageJSONAction(request):
                 temporaryImagePathFileUrl = settings.TEMP_MEDIA_URL + temporaryImagePathFile
                 temporaryTumbImagePathFileUrl = settings.TEMP_MEDIA_URL + temporaryTumbImagePathFile
                 result = JSONSuccessResponse({'temporaryImagePathFileUrl' : temporaryImagePathFileUrl, 'temporaryImagePathFile' : temporaryImagePathFile, 'temporaryTumbImagePathFile' : temporaryTumbImagePathFile, 'temporaryMicroImagePathFile': temporaryMicroImagePathFile, 'temporaryTumbImagePathFileUrl' : temporaryTumbImagePathFileUrl})
-        except Exception, e:
+        except Exception as e:
             result = JSONErrorResponse(e)
         return result
 
@@ -322,7 +322,7 @@ def saveAccountJSONAction(request):
                     coreuser.membership = membership
                     coreuser.save()
                     login(request, coreuser)
-                except Exception, e:
+                except Exception as e:
                     return JSONErrorResponse(e)  
             else:
                 # update account
@@ -342,14 +342,14 @@ def saveProfileJSONAction(request):
     if request.method == 'POST':
         try:
             return saveProfile(request)
-        except TypeError, e:
+        except TypeError as e:
             return JSONErrorResponse(e)
-        except IntegrityError as (errno, strerror):
-            if errno == DUPLICATE_KEY_ERROR: # TODO: improve so AppException is used as wrapper
+        except IntegrityError as err:
+            errno, strerror = err.args
+            if errno == DUPLICATE_KEY_ERROR:
                 return JSONErrorResponse(ugettext('Profilename already exists. Please select another one.'))
-            else:
-                return JSONErrorResponse(strerror)
-        except Exception, e:
+            return JSONErrorResponse(strerror)
+        except Exception as e:
             return JSONErrorResponse(e)
 
 def saveAdvancedJSONAction(request):
@@ -359,11 +359,11 @@ def saveAdvancedJSONAction(request):
     if request.method == 'POST':
         try:
             return saveAdvanced(request)
-        except TypeError, e:
+        except TypeError as e:
             return JSONErrorResponse(e)
-        except IntegrityError as (errno, strerror):
-            return JSONErrorResponse(strerror)
-        except Exception, e:
+        except IntegrityError as err:
+            return JSONErrorResponse(err.args[1] if len(err.args) > 1 else err)
+        except Exception as e:
             return JSONErrorResponse(e)
         
 def getBestMatchesJSONAction(request):
@@ -385,9 +385,9 @@ def getBestMatchesJSONAction(request):
             pageprofiles = page.object_list
             result = JSONSuccessResponse({"profiles": pageprofiles, "pageInfo": pageinfo})
 
-        except AppException, e:
+        except AppException as e:
             result = JSONErrorResponse(e)
-        except Exception, e:
+        except Exception as e:
             result = JSONErrorResponse(e)
         return result
 
@@ -411,7 +411,7 @@ def quickSearchJSONAction(request):
                 pageinfo.update({"prevPageNo" : str(page.previous_page_number())})
             pageprofiles = page.object_list
             result = JSONSuccessResponse({"profiles": pageprofiles, "pageInfo": pageinfo})
-        except Exception, e:
+        except Exception as e:
             result = JSONErrorResponse(e)
         return result
 
@@ -438,9 +438,9 @@ def searchProfilesJSONAction(request):
                 result = JSONSuccessResponse({"profiles": pageprofiles, "pageInfo": pageinfo})
             else:
                 result = JSONFieldErrorResponse(form.errors)
-        except AppException, e:
+        except AppException as e:
             result = JSONErrorResponse(e)
-        except Exception, e:
+        except Exception as e:
             result = JSONErrorResponse(e)
         return result
     
@@ -454,7 +454,7 @@ def getConversationJSONAction(request):
             userprofile = UserProfile.objects.get(pk=profileId)
             conversation = getConversation(thisuserprofile, userprofile)
             return JSONSuccessResponse(conversation)
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
      
 def getCitiesJSONAction(request):
@@ -463,7 +463,7 @@ def getCitiesJSONAction(request):
             countryCode = request.GET['countryId']
             cities = City.objects.filter(countrycode=countryCode).order_by('name')
             return JSONSuccessResponse(cities)
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
 
 def getLatestMessagesJSONAction(request):
@@ -471,7 +471,7 @@ def getLatestMessagesJSONAction(request):
         try:
             latestMessages = getLatestMessages(request, True)
             return JSONSuccessResponse(latestMessages)
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
 
 def getMessagesJSONAction(request):
@@ -479,7 +479,7 @@ def getMessagesJSONAction(request):
         try:
             latestMessages = getLatestMessages(request, False)
             return JSONSuccessResponse(latestMessages)
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
 
 def getInterestSuggestionsJSONAction(request):
@@ -487,7 +487,7 @@ def getInterestSuggestionsJSONAction(request):
         try:
             suggestions = getInterestSuggestions(request, request.GET['keyword'])
             return JSONSuccessResponse(suggestions)
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
 
 def saveInterestJSONAction(request):
@@ -498,7 +498,7 @@ def saveInterestJSONAction(request):
             interest = saveInterest(interestText, categoryText, request)
                         
             return JSONSuccessResponse(interest.to_dict())
-        except Exception, e:
+        except Exception as e:
             return JSONErrorResponse(e)
 
 def getCloseByProfilesJSONAction(request):
@@ -508,5 +508,5 @@ def getCloseByProfilesJSONAction(request):
             return JSONSuccessResponse(getGeoMatches(userprofile))
         else:
             return JSONSuccessResponse()
-    except Exception, e:
+    except Exception as e:
         return JSONErrorResponse(e)

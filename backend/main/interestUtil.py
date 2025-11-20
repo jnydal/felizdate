@@ -5,9 +5,9 @@ Created on 12. feb. 2012
 @author: jny
 '''
 from django.conf import settings
-from models import Interest, Category
-from modelUtils import getFirst
-from handlerUtils import getLanguageCode
+from .models import Interest, Category
+from .modelUtils import getFirst
+from .handlerUtils import getLanguageCode
 
 CUSTOM_INTEREST_CATEGORY_EN_ID = 0
 CUSTOM_INTEREST_CATEGORY_NO_ID = 1

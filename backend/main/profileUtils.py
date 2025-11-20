@@ -5,20 +5,20 @@ Created on 29. jan. 2012
 @author: jny
 '''
 from django.conf import settings
-from forms import ProfileForm, AdvancedForm
-from handlerUtils import JSONSuccessResponse, JSONErrorResponse, \
+from .forms import ProfileForm, AdvancedForm
+from .handlerUtils import JSONSuccessResponse, JSONErrorResponse, \
     getLoggedInUserProfile, JSONFieldErrorResponse, getLanguageCode
-from imageUtils import getAndRemoveTemporaryFile
-from interestUtil import saveInterest, getInterestSuggestion
-from models import Country, Interest, Occupation, Political, EducationalDegree, \
+from .imageUtils import getAndRemoveTemporaryFile
+from .interestUtil import saveInterest, getInterestSuggestion
+from .models import Country, Interest, Occupation, Political, EducationalDegree, \
     Religion, BodyType, SkinType, HairType, EyeColor, UserProfile, \
     PendingProfileImages, City
-from models import getIPCity, getCountry, getReligion, getEducationalDegree, getOccupation, getPolitical, getBodyType, getEyeColor, getSkinType, getHairType, getPendingProfileImages
-import choices
+from .models import getIPCity, getCountry, getReligion, getEducationalDegree, getOccupation, getPolitical, getBodyType, getEyeColor, getSkinType, getHairType, getPendingProfileImages
+from . import choices
 import datetime
-from constants import Status
-from felizdate.main.models import LookingForType
-from activity import ActivityManager
+from .constants import Status
+from .models import LookingForType
+from .activity import ActivityManager
 from django.utils.timezone import utc
 import random, re
 from felizdate.main.constants import UserType
@@ -188,8 +188,8 @@ def saveProfile(request):
             else:
                 result.update(getProfileDict(userprofile))
                 return JSONSuccessResponse(result)
-        except Exception, e:
-            return JSONErrorResponse(e);    
+        except Exception as e:
+            return JSONErrorResponse(e)
     else:
         return JSONFieldErrorResponse(form.errors)
 
@@ -249,8 +249,8 @@ def saveAdvanced(request):
 
             userprofile.save()
             return JSONSuccessResponse(getProfileDict(userprofile))
-        except Exception, e:
-            return JSONErrorResponse(e);    
+        except Exception as e:
+            return JSONErrorResponse(e)
     else:
         return JSONFieldErrorResponse(form.errors)
     
@@ -290,7 +290,7 @@ def setGeneratedProfileName(userProfile):
     userProfile.profilename = getNickName(userProfile.gender, age)
     try:
         userProfile.save()
-    except Exception, e:
+    except Exception as e:
         setGeneratedProfileName(userProfile)
 
 def populateFacebookUser(userProfile, fbUser, request):
@@ -403,5 +403,5 @@ def populateFacebookUser(userProfile, fbUser, request):
         setGeneratedProfileName(userProfile)
         setupAdvancedDefaults(userProfile)
 
-    except Exception, e:
+    except Exception as e:
         pass
