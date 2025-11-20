@@ -9,7 +9,9 @@ from profileUtils import getLoggedInUserProfile
 from handlerUtils import getLanguageCode
 from django.conf import settings
 from django.core.mail import send_mail
-from django.utils.translation import ugettext
+from django.utils.translation import gettext as _
+
+ugettext = _
 
 def getConversation(thisUserProfile, userProfile):
     messages = Message.objects.filter(fromProfile__in=[thisUserProfile,userProfile], toProfile__in=[thisUserProfile,userProfile]).order_by('timestamp')

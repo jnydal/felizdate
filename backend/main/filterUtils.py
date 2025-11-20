@@ -9,8 +9,8 @@ from profileUtils import getAge
 from django.conf import settings
 from django.contrib.gis.measure import D
 from models import UserProfile, EducationalDegree, Interest
-from async import AsyncSession
 from constants import Status
+from activity import ActivityManager
 
 def getBirthYear(age):
     age = int(age)
@@ -160,6 +160,6 @@ def getFilteredProfiles(filterDict, userprofile):
 def getFilteredAsyncSessionProfiles(userProfiles):
     result = []
     for profile in userProfiles:
-        if AsyncSession.hasSession(profile.id):
+        if ActivityManager.isActive(profile):
             result.append(profile)
     return result

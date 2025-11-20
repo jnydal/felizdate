@@ -8,13 +8,12 @@ Created on 3. mai 2011
 @author: Joerund Nydal
 
 '''
-from async import AsyncSession
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.gis.geos import fromstr
 from django.core.files.base import ContentFile
 from django.core.paginator import Paginator
 from django.db import IntegrityError
-from django.utils.translation import ugettext
+from django.utils.translation import gettext as _
 from django.core.files import File
 from exceptions import AppException
 from constants import Status, MembershipType, Skin, Sound
@@ -34,6 +33,8 @@ import time, logging
 from felizdate.main.constants import UserType
 import urllib
 from realtime import dispatch_chat_message
+
+ugettext = _
 
 DUPLICATE_KEY_ERROR = 1062
 PROFILES_PR_SEARCH_RESULT = 21
@@ -68,7 +69,6 @@ def logoutJSONAction(request):
     userprofile = getLoggedInUserProfile(request)
     try:
         if userprofile:
-            AsyncSession.remove(userprofile.id)
             ActivityManager.remove(userprofile)
         logout(request)
         return JSONSuccessResponse()

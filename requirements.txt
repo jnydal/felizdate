@@ -7,6 +7,5 @@ boto
 gunicorn==21.2.0
 psycopg2-binary
 python-memcached
-tornado==6.4.1
 daphne==4.1.0
 # NOTE: The code imports 'from google import translate'. If needed, add a suitable package providing that API.

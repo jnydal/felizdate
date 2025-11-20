@@ -8,7 +8,6 @@ from django.conf import settings
 from forms import ProfileForm, AdvancedForm
 from handlerUtils import JSONSuccessResponse, JSONErrorResponse, \
     getLoggedInUserProfile, JSONFieldErrorResponse, getLanguageCode
-from async import AsyncSession
 from imageUtils import getAndRemoveTemporaryFile
 from interestUtil import saveInterest, getInterestSuggestion
 from models import Country, Interest, Occupation, Political, EducationalDegree, \
@@ -19,6 +18,7 @@ import choices
 import datetime
 from constants import Status
 from felizdate.main.models import LookingForType
+from activity import ActivityManager
 from django.utils.timezone import utc
 import random, re
 from felizdate.main.constants import UserType
@@ -108,7 +108,7 @@ def getProfileDict(profile):
                  "partnerSkinTypes": profile.partnerskintypes.all(),
                  "partnerEyeColors": profile.partnereyecolors.all(),
                  "status": profile.status,
-                 "loggedIn": AsyncSession.hasSession(profile.id) and profile.status != 3,
+                 "loggedIn": ActivityManager.isActive(profile) and profile.status != 3,
                  "interests": profile.interests.all(),
                  "pendingImage": hasProfileImagePending(profile),
                  "media": profile.getMedia(),

@@ -41,7 +41,7 @@ It features instant messaging, geolocation, and a single-page JavaScript interfa
 - **Frameworks:** Django (HTTP/Wsgi + ORM) served directly by Gunicorn, with a Channels-powered ASGI service (Daphne) + Redis channel layer for realtime `/ws/chat/` sockets  
 - **Database:** PostgreSQL 16 with PostGIS 3.4 for geolocation  
 - **Caching:** Memcached + pgBouncer connection pooling  
-- **Web Server:** Nginx + HAProxy for load balancing / path-based routing (`/async` traffic → Tornado, everything else → Django)  
+- **Web Server:** Nginx + HAProxy for load balancing / path-based routing (HTTP traffic → Gunicorn, WebSockets → Daphne)  
 - **App Servers:** Gunicorn (HTTP) + dedicated Tornado worker for push  
 - **CDN & Storage:** Amazon S3 + CloudFront  
 
